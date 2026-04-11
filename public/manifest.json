@@ -1,0 +1,16 @@
+{
+  "name": "ManpowerPro",
+  "short_name": "ManpowerPro",
+  "description": "Reliable manpower supply solutions for your business",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0f1b3d",
+  "theme_color": "#0f1b3d",
+  "icons": [
+    {
+      "src": "/placeholder.svg",
+      "sizes": "192x192",
+      "type": "image/svg+xml"
+    }
+  ]
+}
