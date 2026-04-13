@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { Mail, Phone, MapPin } from "lucide-react";
+import logo from "@/assets/logo.png";
 
 const Footer = () => (
   <footer className="bg-primary text-primary-foreground">
@@ -7,15 +8,17 @@ const Footer = () => (
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
         {/* About */}
         <div>
-          <div className="flex items-center gap-2 mb-4">
-            <div className="w-9 h-9 rounded-lg bg-secondary flex items-center justify-center">
-              <span className="text-secondary-foreground font-heading font-bold">M</span>
+          <div className="flex items-center gap-3 mb-4">
+            <img src={logo} alt="Maiitreyaa" className="h-10 w-10 object-contain" width={40} height={40} loading="lazy" />
+            <div>
+              <span className="font-heading font-bold text-lg block leading-tight">Maiitreyaa</span>
+              <span className="text-[10px] font-medium tracking-wider uppercase text-primary-foreground/60">Integrated Solutions LLP</span>
             </div>
-            <span className="font-heading font-bold text-lg">ManpowerPro</span>
           </div>
           <p className="text-primary-foreground/70 text-sm leading-relaxed">
-            Your trusted partner for reliable manpower solutions. Over 10 years of connecting top talent with leading businesses.
+            Your trusted partner for reliable integrated manpower solutions. Providing skilled, semi-skilled, and unskilled workforce across industries in Uttar Pradesh and beyond.
           </p>
+          <p className="text-primary-foreground/50 text-xs mt-3">LLPIN: ACW-8159</p>
         </div>
 
         {/* Quick Links */}
@@ -45,6 +48,7 @@ const Footer = () => (
             <li>Semi-Skilled Workers</li>
             <li>Unskilled Workers</li>
             <li>Contract Staffing</li>
+            <li>Industrial Manpower</li>
           </ul>
         </div>
 
@@ -54,7 +58,7 @@ const Footer = () => (
           <ul className="space-y-3 text-sm text-primary-foreground/70">
             <li className="flex items-start gap-2">
               <MapPin className="w-4 h-4 mt-0.5 shrink-0 text-secondary" />
-              123 Business Avenue, Industrial District, Mumbai 400001
+              A-2/99 Badri Awas Yojana, Mehdauri, Teliyarganj, Allahabad, Uttar Pradesh 211004
             </li>
             <li className="flex items-center gap-2">
               <Phone className="w-4 h-4 shrink-0 text-secondary" />
@@ -62,7 +66,7 @@ const Footer = () => (
             </li>
             <li className="flex items-center gap-2">
               <Mail className="w-4 h-4 shrink-0 text-secondary" />
-              info@manpowerpro.com
+              maiitreyaasolutions@gmail.com
             </li>
           </ul>
         </div>
@@ -70,10 +74,10 @@ const Footer = () => (
 
       <div className="mt-12 pt-8 border-t border-primary-foreground/10 flex flex-col sm:flex-row items-center justify-between gap-4">
         <p className="text-sm text-primary-foreground/50">
-          © {new Date().getFullYear()} ManpowerPro. All rights reserved.
+          © {new Date().getFullYear()} Maiitreyaa Integrated Solutions LLP. All rights reserved.
         </p>
         <div className="flex gap-4">
-          {["Facebook", "LinkedIn", "Twitter"].map((s) => (
+          {["Facebook", "LinkedIn", "Instagram"].map((s) => (
             <a key={s} href="#" className="text-sm text-primary-foreground/50 hover:text-secondary transition-colors" aria-label={s}>
               {s}
             </a>

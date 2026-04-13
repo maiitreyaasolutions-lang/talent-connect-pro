@@ -10,14 +10,14 @@ import { useToast } from "@/hooks/use-toast";
 const categories = ["All", "Skilled", "Semi-Skilled", "Unskilled"] as const;
 
 const jobs = [
-  { title: "Electrician", category: "Skilled", location: "Mumbai", type: "Full-time", desc: "Licensed electrician for industrial wiring and maintenance." },
-  { title: "Welder", category: "Skilled", location: "Pune", type: "Contract", desc: "Certified welder for structural steel fabrication projects." },
-  { title: "Machine Operator", category: "Semi-Skilled", location: "Delhi", type: "Full-time", desc: "CNC machine operator for manufacturing plant." },
-  { title: "Forklift Driver", category: "Semi-Skilled", location: "Chennai", type: "Full-time", desc: "Licensed forklift operator for warehouse operations." },
-  { title: "Construction Helper", category: "Unskilled", location: "Bangalore", type: "Contract", desc: "General helper for construction site activities." },
-  { title: "Warehouse Loader", category: "Unskilled", location: "Hyderabad", type: "Full-time", desc: "Loading and unloading goods in warehouse facility." },
-  { title: "Plumber", category: "Skilled", location: "Mumbai", type: "Full-time", desc: "Experienced plumber for commercial building projects." },
-  { title: "Painter", category: "Semi-Skilled", location: "Pune", type: "Contract", desc: "Industrial painter for factory and warehouse finishing." },
+  { title: "Electrician", category: "Skilled", location: "Allahabad", type: "Full-time", desc: "Licensed electrician for industrial wiring and maintenance projects." },
+  { title: "Welder", category: "Skilled", location: "Lucknow", type: "Contract", desc: "Certified welder for structural steel fabrication projects." },
+  { title: "Machine Operator", category: "Semi-Skilled", location: "Kanpur", type: "Full-time", desc: "CNC machine operator for manufacturing plant operations." },
+  { title: "Forklift Driver", category: "Semi-Skilled", location: "Varanasi", type: "Full-time", desc: "Licensed forklift operator for warehouse operations." },
+  { title: "Construction Helper", category: "Unskilled", location: "Allahabad", type: "Contract", desc: "General helper for construction site activities." },
+  { title: "Warehouse Loader", category: "Unskilled", location: "Lucknow", type: "Full-time", desc: "Loading and unloading goods in warehouse facility." },
+  { title: "Plumber", category: "Skilled", location: "Allahabad", type: "Full-time", desc: "Experienced plumber for commercial building projects." },
+  { title: "Painter", category: "Semi-Skilled", location: "Kanpur", type: "Contract", desc: "Industrial painter for factory and warehouse finishing." },
 ];
 
 const applicationSchema = z.object({
@@ -59,7 +59,7 @@ const Careers = () => {
                 Find Your Next Opportunity
               </h1>
               <p className="mt-6 text-lg text-primary-foreground/70 leading-relaxed max-w-2xl">
-                Browse open positions across skilled, semi-skilled, and unskilled categories. Join the ManpowerPro workforce today.
+                Browse open positions across skilled, semi-skilled, and unskilled categories. Join the Maiitreyaa workforce today.
               </p>
             </div>
           </ScrollReveal>

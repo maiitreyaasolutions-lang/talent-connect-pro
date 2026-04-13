@@ -3,6 +3,7 @@ import { Link, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { cn } from "@/lib/utils";
+import logo from "@/assets/logo.png";
 
 const navLinks = [
   { label: "Home", path: "/" },
@@ -28,17 +29,20 @@ const Header = () => {
     <header
       className={cn(
         "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
-        scrolled ? "bg-card/95 backdrop-blur-md shadow-md py-3" : "bg-transparent py-5"
+        scrolled ? "bg-card/95 backdrop-blur-md shadow-md py-2" : "bg-transparent py-4"
       )}
     >
       <div className="container flex items-center justify-between">
-        <Link to="/" className="flex items-center gap-2 group">
-          <div className="w-10 h-10 rounded-lg bg-secondary flex items-center justify-center">
-            <span className="text-secondary-foreground font-heading font-bold text-lg">M</span>
+        <Link to="/" className="flex items-center gap-3 group">
+          <img src={logo} alt="Maiitreyaa Integrated Solutions LLP" className="h-10 w-10 object-contain" width={40} height={40} />
+          <div className="flex flex-col">
+            <span className={cn("font-heading font-bold text-lg leading-tight transition-colors", scrolled ? "text-foreground" : "text-primary-foreground")}>
+              Maiitreyaa
+            </span>
+            <span className={cn("text-[10px] font-medium tracking-wider uppercase leading-tight transition-colors", scrolled ? "text-muted-foreground" : "text-primary-foreground/60")}>
+              Integrated Solutions LLP
+            </span>
           </div>
-          <span className={cn("font-heading font-bold text-xl transition-colors", scrolled ? "text-foreground" : "text-primary-foreground")}>
-            ManpowerPro
-          </span>
         </Link>
 
         {/* Desktop nav */}
