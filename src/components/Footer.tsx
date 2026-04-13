@@ -9,7 +9,7 @@ const Footer = () => (
         {/* About */}
         <div>
           <div className="flex items-center gap-3 mb-4">
-            <img src={logo} alt="Maiitreyaa" className="h-10 w-10 object-contain" width={40} height={40} loading="lazy" />
+            <img src={logo} alt="Maiitreyaa" className="h-16 w-16 object-contain" width={64} height={64} loading="lazy" />
             <div>
               <span className="font-heading font-bold text-lg block leading-tight">Maiitreyaa</span>
               <span className="text-[10px] font-medium tracking-wider uppercase text-primary-foreground/60">Integrated Solutions LLP</span>
@@ -57,15 +57,15 @@ const Footer = () => (
           <h4 className="font-heading font-semibold text-base mb-4">Contact</h4>
           <ul className="space-y-3 text-sm text-primary-foreground/70">
             <li className="flex items-start gap-2">
-              <MapPin className="w-4 h-4 mt-0.5 shrink-0 text-secondary" />
+              <MapPin className="w-5 h-5 mt-0.5 shrink-0 text-secondary" />
               A-2/99 Badri Awas Yojana, Mehdauri, Teliyarganj, Allahabad, Uttar Pradesh 211004
             </li>
             <li className="flex items-center gap-2">
-              <Phone className="w-4 h-4 shrink-0 text-secondary" />
+              <Phone className="w-5 h-5 shrink-0 text-secondary" />
               +91 98765 43210
             </li>
             <li className="flex items-center gap-2">
-              <Mail className="w-4 h-4 shrink-0 text-secondary" />
+              <Mail className="w-5 h-5 shrink-0 text-secondary" />
               maiitreyaasolutions@gmail.com
             </li>
           </ul>

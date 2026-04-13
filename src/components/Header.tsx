@@ -34,7 +34,7 @@ const Header = () => {
     >
       <div className="container flex items-center justify-between">
         <Link to="/" className="flex items-center gap-3 group">
-          <img src={logo} alt="Maiitreyaa Integrated Solutions LLP" className="h-10 w-10 object-contain" width={40} height={40} />
+          <img src={logo} alt="Maiitreyaa Integrated Solutions LLP" className="h-16 w-16 object-contain" width={64} height={64} />
           <div className="flex flex-col">
             <span className={cn("font-heading font-bold text-lg leading-tight transition-colors", scrolled ? "text-foreground" : "text-primary-foreground")}>
               Maiitreyaa

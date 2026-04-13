@@ -2,6 +2,8 @@ import { Mail, Phone, MapPin, Clock } from "lucide-react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
+import { useEffect, useState } from "react";
+import emailjs from "@emailjs/browser";
 import ScrollReveal from "@/components/ScrollReveal";
 import { useToast } from "@/hooks/use-toast";
 
@@ -18,19 +20,56 @@ type ContactForm = z.infer<typeof contactSchema>;
 const info = [
   { icon: MapPin, label: "Address", value: "A-2/99 Badri Awas Yojana, Mehdauri, Teliyarganj, Cavellary Lines, Allahabad, UP 211004" },
   { icon: Phone, label: "Phone", value: "+91 98765 43210" },
-  { icon: Mail, label: "Email", value: "maiitreyaasolutions@gmail.com" },
+  { icon: Mail, label: "Email", value: "rishuraj89850@gmail.com" },
   { icon: Clock, label: "Hours", value: "Mon – Sat: 9:00 AM – 6:00 PM" },
 ];
 
 const Contact = () => {
-  const { toast } = useToast();
+  const [isLoading, setIsLoading] = useState(false);
   const { register, handleSubmit, formState: { errors }, reset } = useForm<ContactForm>({
     resolver: zodResolver(contactSchema),
   });
+  const { toast } = useToast();
 
-  const onSubmit = (data: ContactForm) => {
-    toast({ title: "Message Sent!", description: `Thanks ${data.name}, we'll get back to you within 24 hours.` });
-    reset();
+  useEffect(() => {
+    // Initialize EmailJS with your public key
+    emailjs.init("qUaIgVi9gYl3nAvXa");
+  }, []);
+
+  const onSubmit = async (data: ContactForm) => {
+    setIsLoading(true);
+    try {
+      const result = await emailjs.send(
+        "service_talent_connect",
+        "template_contact_form",
+        {
+          to_email: "rishuraj89850@gmail.com",
+          from_name: data.name,
+          from_email: data.email,
+          phone: data.phone,
+          subject: data.subject,
+          message: data.message,
+          reply_to: data.email,
+        }
+      );
+
+      if (result.status === 200) {
+        toast({ 
+          title: "Message Sent Successfully!", 
+          description: `Thanks ${data.name}, your message has been sent to rishuraj89850@gmail.com. We'll get back to you within 24 hours.` 
+        });
+        reset();
+      }
+    } catch (error) {
+      console.error("Email error:", error);
+      toast({ 
+        title: "Error", 
+        description: "Failed to send message. Please try again or contact us directly.",
+        variant: "destructive"
+      });
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   return (
@@ -91,8 +130,8 @@ const Contact = () => {
                       <textarea {...register("message")} id="c-message" rows={5} className="mt-1 w-full px-4 py-2.5 rounded-lg border border-border bg-background text-foreground text-sm focus:ring-2 focus:ring-secondary focus:border-transparent outline-none resize-none" />
                       {errors.message && <p className="text-xs text-destructive mt-1">{errors.message.message}</p>}
                     </div>
-                    <button type="submit" className="px-8 py-3 bg-secondary text-secondary-foreground rounded-lg font-semibold hover:bg-teal-light transition-colors">
-                      Send Message
+                    <button type="submit" disabled={isLoading} className="px-8 py-3 bg-secondary text-secondary-foreground rounded-lg font-semibold hover:bg-teal-light transition-colors disabled:opacity-50 disabled:cursor-not-allowed">
+                      {isLoading ? "Sending..." : "Send Message"}
                     </button>
                   </form>
                 </div>
