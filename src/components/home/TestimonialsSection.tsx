@@ -6,20 +6,20 @@ import ScrollReveal from "@/components/ScrollReveal";
 const testimonials = [
   {
     name: "Rajesh Kumar",
-    role: "Project Manager, Tata Projects",
-    quote: "ManpowerPro delivered 200+ workers for our infrastructure project within 48 hours. Their reliability is unmatched in the industry.",
+    role: "Project Manager, Infrastructure Corp",
+    quote: "Maiitreyaa delivered 200+ workers for our infrastructure project within 48 hours. Their reliability is unmatched in the industry.",
     rating: 5,
   },
   {
     name: "Priya Sharma",
-    role: "HR Director, Reliance Industries",
-    quote: "We've been working with ManpowerPro for 5 years. Their workers are well-trained, punctual, and professional. Highly recommended!",
+    role: "HR Director, Manufacturing Ltd",
+    quote: "We've been working with Maiitreyaa Integrated Solutions for our staffing needs. Their workers are well-trained, punctual, and professional. Highly recommended!",
     rating: 5,
   },
   {
     name: "Ahmed Khan",
-    role: "Operations Head, L&T Construction",
-    quote: "Scaling our workforce during peak season was effortless with ManpowerPro. Their team understands our needs perfectly.",
+    role: "Operations Head, Construction Co.",
+    quote: "Scaling our workforce during peak season was effortless with Maiitreyaa. Their team understands our needs perfectly and delivers every time.",
     rating: 5,
   },
 ];

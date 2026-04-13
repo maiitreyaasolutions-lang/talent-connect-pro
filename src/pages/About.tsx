@@ -2,18 +2,14 @@ import { Target, Eye, Users, Award, Building, Globe } from "lucide-react";
 import ScrollReveal from "@/components/ScrollReveal";
 
 const team = [
-  { name: "Vikram Patel", role: "CEO & Founder", desc: "20+ years in workforce management" },
-  { name: "Anita Desai", role: "Operations Director", desc: "Expert in large-scale deployments" },
-  { name: "Suresh Menon", role: "HR Head", desc: "Specialist in talent acquisition" },
-  { name: "Fatima Sheikh", role: "Client Relations", desc: "Dedicated to client satisfaction" },
+  { name: "Kunwar Jay Singh", role: "Designated Partner", desc: "Co-founder and strategic leader driving company vision" },
+  { name: "Kunwar Vaibhaw Singh", role: "Designated Partner", desc: "Co-founder overseeing operations and client relations" },
 ];
 
 const timeline = [
-  { year: "2013", event: "Founded with a vision to revolutionize manpower supply" },
-  { year: "2016", event: "Expanded to 5 major cities across India" },
-  { year: "2019", event: "Crossed 10,000 workers deployed milestone" },
-  { year: "2022", event: "Launched digital platform for workforce management" },
-  { year: "2024", event: "Serving 500+ clients across 15+ industries" },
+  { year: "2026", event: "Maiitreyaa Integrated Solutions LLP incorporated on 30th March 2026 in Allahabad, UP" },
+  { year: "2026", event: "Registered under MCA with LLPIN ACW-8159 under ROC Uttar Pradesh I" },
+  { year: "2026", event: "Began operations as a Small LLP providing integrated manpower solutions" },
 ];
 
 const About = () => (
@@ -25,10 +21,11 @@ const About = () => (
           <div className="max-w-3xl">
             <span className="text-sm font-semibold text-secondary uppercase tracking-wider">About Us</span>
             <h1 className="mt-3 text-4xl sm:text-5xl font-heading font-bold text-primary-foreground leading-tight">
-              Building India's Most Trusted Workforce Partner
+              Building India's Most Trusted Integrated Workforce Partner
             </h1>
             <p className="mt-6 text-lg text-primary-foreground/70 leading-relaxed max-w-2xl">
-              For over a decade, ManpowerPro has been connecting businesses with reliable, skilled workers. Our commitment to quality and speed sets us apart.
+              Maiitreyaa Integrated Solutions LLP is a government-registered company (LLPIN: ACW-8159) based in Allahabad, Uttar Pradesh. 
+              We provide reliable skilled, semi-skilled, and unskilled manpower to industries across India.
             </p>
           </div>
         </ScrollReveal>
@@ -46,7 +43,7 @@ const About = () => (
               </div>
               <h3 className="text-xl font-heading font-semibold text-foreground mb-3">Our Mission</h3>
               <p className="text-muted-foreground leading-relaxed">
-                To provide businesses with the highest quality workforce solutions, ensuring reliable, vetted, and skilled workers are deployed swiftly to meet evolving industry demands.
+                To provide businesses with the highest quality integrated workforce solutions, ensuring reliable, vetted, and skilled workers are deployed swiftly to meet evolving industry demands across Uttar Pradesh and India.
               </p>
             </div>
           </ScrollReveal>
@@ -57,7 +54,7 @@ const About = () => (
               </div>
               <h3 className="text-xl font-heading font-semibold text-foreground mb-3">Our Vision</h3>
               <p className="text-muted-foreground leading-relaxed">
-                To become the leading manpower supply partner in Asia, known for innovation, reliability, and creating meaningful employment opportunities for millions.
+                To become the leading integrated manpower solutions partner in India, known for innovation, reliability, and creating meaningful employment opportunities for thousands of workers.
               </p>
             </div>
           </ScrollReveal>
@@ -65,21 +62,55 @@ const About = () => (
       </div>
     </section>
 
-    {/* Timeline */}
+    {/* Company Details */}
     <section className="py-20 bg-muted/50">
+      <div className="container">
+        <ScrollReveal>
+          <div className="text-center max-w-2xl mx-auto mb-16">
+            <span className="text-sm font-semibold text-secondary uppercase tracking-wider">Company Details</span>
+            <h2 className="mt-3 text-3xl sm:text-4xl font-heading font-bold text-foreground">
+              Officially Registered & Compliant
+            </h2>
+          </div>
+        </ScrollReveal>
+
+        <div className="max-w-3xl mx-auto grid sm:grid-cols-2 gap-4">
+          {[
+            { label: "LLPIN", value: "ACW-8159" },
+            { label: "LLP Name", value: "Maiitreyaa Integrated Solutions LLP" },
+            { label: "ROC", value: "ROC Uttar Pradesh I" },
+            { label: "Date of Incorporation", value: "30/03/2026" },
+            { label: "Status", value: "Active" },
+            { label: "Category", value: "Small LLP" },
+            { label: "RD Region", value: "RD Delhi, Northern Region" },
+            { label: "Registered Address", value: "A-2/99 Badri Awas Yojana, Mehdauri, Teliyarganj, Allahabad, UP 211004" },
+          ].map((item, i) => (
+            <ScrollReveal key={item.label} delay={i * 0.05}>
+              <div className="bg-card rounded-xl p-5 border border-border">
+                <p className="text-xs font-semibold text-secondary uppercase tracking-wider mb-1">{item.label}</p>
+                <p className="text-sm text-foreground font-medium">{item.value}</p>
+              </div>
+            </ScrollReveal>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    {/* Timeline */}
+    <section className="py-20 bg-background">
       <div className="container">
         <ScrollReveal>
           <div className="text-center max-w-2xl mx-auto mb-16">
             <span className="text-sm font-semibold text-secondary uppercase tracking-wider">Our Journey</span>
             <h2 className="mt-3 text-3xl sm:text-4xl font-heading font-bold text-foreground">
-              10+ Years of Excellence
+              The Beginning of Excellence
             </h2>
           </div>
         </ScrollReveal>
 
         <div className="max-w-2xl mx-auto space-y-0">
           {timeline.map((t, i) => (
-            <ScrollReveal key={t.year} delay={i * 0.1}>
+            <ScrollReveal key={i} delay={i * 0.1}>
               <div className="flex gap-6 pb-8 relative">
                 <div className="flex flex-col items-center">
                   <div className="w-10 h-10 rounded-full bg-secondary flex items-center justify-center text-secondary-foreground text-xs font-bold shrink-0">
@@ -99,18 +130,18 @@ const About = () => (
     </section>
 
     {/* Team */}
-    <section className="py-20 bg-background">
+    <section className="py-20 bg-muted/50">
       <div className="container">
         <ScrollReveal>
           <div className="text-center max-w-2xl mx-auto mb-16">
-            <span className="text-sm font-semibold text-secondary uppercase tracking-wider">Our Team</span>
+            <span className="text-sm font-semibold text-secondary uppercase tracking-wider">Our Partners</span>
             <h2 className="mt-3 text-3xl sm:text-4xl font-heading font-bold text-foreground">
               Leadership That Delivers
             </h2>
           </div>
         </ScrollReveal>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid sm:grid-cols-2 gap-6 max-w-2xl mx-auto">
           {team.map((member, i) => (
             <ScrollReveal key={member.name} delay={i * 0.1}>
               <div className="bg-card rounded-xl p-6 border border-border text-center group hover:shadow-lg transition-shadow">

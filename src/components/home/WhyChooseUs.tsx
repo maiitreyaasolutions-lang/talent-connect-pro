@@ -4,10 +4,10 @@ import ScrollReveal from "@/components/ScrollReveal";
 const reasons = [
   { icon: Shield, title: "Verified Workers", desc: "Background-checked and verified workforce for your peace of mind." },
   { icon: Clock, title: "Fast Deployment", desc: "Get workers on-site within 24-48 hours of request." },
-  { icon: Award, title: "10+ Years Experience", desc: "A decade of trusted manpower supply across industries." },
+  { icon: Award, title: "Govt. Registered LLP", desc: "Officially registered under MCA with LLPIN ACW-8159." },
   { icon: Headphones, title: "24/7 Support", desc: "Dedicated account managers and round-the-clock assistance." },
   { icon: TrendingUp, title: "Scalable Teams", desc: "Easily scale workforce up or down based on project demands." },
-  { icon: UserCheck, title: "Skilled Matching", desc: "AI-driven matching of workers to job requirements for best fit." },
+  { icon: UserCheck, title: "Skilled Matching", desc: "Expert matching of workers to job requirements for the best fit." },
 ];
 
 const WhyChooseUs = () => (
@@ -17,10 +17,10 @@ const WhyChooseUs = () => (
         <div className="text-center max-w-2xl mx-auto mb-16">
           <span className="text-sm font-semibold text-secondary uppercase tracking-wider">Why Choose Us</span>
           <h2 className="mt-3 text-3xl sm:text-4xl font-heading font-bold text-foreground">
-            The ManpowerPro Advantage
+            The Maiitreyaa Advantage
           </h2>
           <p className="mt-4 text-muted-foreground leading-relaxed">
-            We go beyond just supplying workers. We deliver reliable, quality workforce solutions that power your success.
+            We go beyond just supplying workers. We deliver reliable, quality integrated workforce solutions that power your success.
           </p>
         </div>
       </ScrollReveal>

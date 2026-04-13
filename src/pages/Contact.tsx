@@ -16,9 +16,9 @@ const contactSchema = z.object({
 type ContactForm = z.infer<typeof contactSchema>;
 
 const info = [
-  { icon: MapPin, label: "Address", value: "123 Business Avenue, Industrial District, Mumbai 400001" },
+  { icon: MapPin, label: "Address", value: "A-2/99 Badri Awas Yojana, Mehdauri, Teliyarganj, Cavellary Lines, Allahabad, UP 211004" },
   { icon: Phone, label: "Phone", value: "+91 98765 43210" },
-  { icon: Mail, label: "Email", value: "info@manpowerpro.com" },
+  { icon: Mail, label: "Email", value: "maiitreyaasolutions@gmail.com" },
   { icon: Clock, label: "Hours", value: "Mon – Sat: 9:00 AM – 6:00 PM" },
 ];
 
@@ -117,11 +117,16 @@ const Contact = () => {
 
               {/* Map Placeholder */}
               <ScrollReveal delay={0.4}>
-                <div className="bg-muted rounded-xl h-48 flex items-center justify-center border border-border">
-                  <div className="text-center text-muted-foreground">
-                    <MapPin className="w-8 h-8 mx-auto mb-2" />
-                    <p className="text-sm">Google Maps Integration</p>
-                  </div>
+                <div className="bg-muted rounded-xl overflow-hidden border border-border">
+                  <iframe
+                    title="Maiitreyaa Office Location"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3602.8!2d81.85!3d25.45!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjXCsDI3JzAwLjAiTiA4McKwNTEnMDAuMCJF!5e0!3m2!1sen!2sin!4v1"
+                    className="w-full h-48"
+                    style={{ border: 0 }}
+                    allowFullScreen
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                  />
                 </div>
               </ScrollReveal>
             </div>
