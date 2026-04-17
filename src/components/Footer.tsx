@@ -9,7 +9,14 @@ const Footer = () => (
         {/* About */}
         <div>
           <div className="flex items-center gap-3 mb-4">
-            <img src={logo} alt="Maiitreyaa" className="h-16 w-16 object-contain" width={64} height={64} loading="lazy" />
+            <img 
+              src={logo} 
+              alt="Maiitreyaa" 
+              className="h-16 w-16 object-contain brightness-0 invert" 
+              width={64} 
+              height={64} 
+              loading="lazy" 
+            />
             <div>
               <span className="font-heading font-bold text-lg block leading-tight">Maiitreyaa</span>
               <span className="text-[10px] font-medium tracking-wider uppercase text-primary-foreground/60">Integrated Solutions LLP</span>
@@ -62,11 +69,11 @@ const Footer = () => (
             </li>
             <li className="flex items-center gap-2">
               <Phone className="w-5 h-5 shrink-0 text-secondary" />
-              +91 98765 43210
+              <a href="tel:+919876543210" className="hover:text-secondary transition-colors">+91 98765 43210</a>
             </li>
             <li className="flex items-center gap-2">
               <Mail className="w-5 h-5 shrink-0 text-secondary" />
-              maiitreyaasolutions@gmail.com
+              <a href="mailto:maiitreyaasolutions@gmail.com" className="hover:text-secondary transition-colors">maiitreyaasolutions@gmail.com</a>
             </li>
           </ul>
         </div>

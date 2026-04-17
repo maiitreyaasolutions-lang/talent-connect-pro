@@ -1,12 +1,13 @@
-import { lazy, Suspense } from "react";
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Footer from "@/components/Footer";
+import Header from "@/components/Header";
+import ScrollToTop from "@/components/ScrollToTop";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
-import ScrollToTop from "@/components/ScrollToTop";
+import WhatsAppFloat from "@/components/WhatsAppFloat";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { lazy, Suspense } from "react";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Index from "./pages/Index";
 
 const About = lazy(() => import("./pages/About"));
@@ -41,6 +42,7 @@ const App = () => (
           </Suspense>
         </main>
         <Footer />
+        <WhatsAppFloat />
         <ScrollToTop />
       </BrowserRouter>
     </TooltipProvider>

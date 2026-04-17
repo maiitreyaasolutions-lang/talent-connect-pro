@@ -2,8 +2,7 @@ import { Mail, Phone, MapPin, Clock } from "lucide-react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
-import { useEffect, useState } from "react";
-import emailjs from "@emailjs/browser";
+import { useState } from "react";
 import ScrollReveal from "@/components/ScrollReveal";
 import { useToast } from "@/hooks/use-toast";
 
@@ -20,7 +19,7 @@ type ContactForm = z.infer<typeof contactSchema>;
 const info = [
   { icon: MapPin, label: "Address", value: "A-2/99 Badri Awas Yojana, Mehdauri, Teliyarganj, Cavellary Lines, Allahabad, UP 211004" },
   { icon: Phone, label: "Phone", value: "+91 98765 43210" },
-  { icon: Mail, label: "Email", value: "rishuraj89850@gmail.com" },
+  { icon: Mail, label: "Email", value: "maiitreyaasolutions@gmail.com" },
   { icon: Clock, label: "Hours", value: "Mon – Sat: 9:00 AM – 6:00 PM" },
 ];
 
@@ -31,40 +30,26 @@ const Contact = () => {
   });
   const { toast } = useToast();
 
-  useEffect(() => {
-    // Initialize EmailJS with your public key
-    emailjs.init("qUaIgVi9gYl3nAvXa");
-  }, []);
-
   const onSubmit = async (data: ContactForm) => {
     setIsLoading(true);
     try {
-      const result = await emailjs.send(
-        "service_talent_connect",
-        "template_contact_form",
-        {
-          to_email: "rishuraj89850@gmail.com",
-          from_name: data.name,
-          from_email: data.email,
-          phone: data.phone,
-          subject: data.subject,
-          message: data.message,
-          reply_to: data.email,
-        }
-      );
+      // Direct Email (mailto:) approach to resolve EmailJS 404 and fulfill "direct send" request
+      const mailtoUrl = `mailto:maiitreyaasolutions@gmail.com?subject=${encodeURIComponent(data.subject)}&body=${encodeURIComponent(
+        `Name: ${data.name}\nEmail: ${data.email}\nPhone: ${data.phone}\n\nMessage:\n${data.message}`
+      )}`;
+      
+      window.location.href = mailtoUrl;
 
-      if (result.status === 200) {
-        toast({ 
-          title: "Message Sent Successfully!", 
-          description: `Thanks ${data.name}, your message has been sent to rishuraj89850@gmail.com. We'll get back to you within 24 hours.` 
-        });
-        reset();
-      }
-    } catch (error) {
-      console.error("Email error:", error);
       toast({ 
-        title: "Error", 
-        description: "Failed to send message. Please try again or contact us directly.",
+        title: "Redirecting to your Email Client", 
+        description: "Your message has been prepared in your default email app. Please click send there." 
+      });
+      reset();
+    } catch (error) {
+      console.error("Submission error:", error);
+      toast({ 
+        title: "Submission Error", 
+        description: "We couldn't open your email client. Please copy our email address and contact us directly.",
         variant: "destructive"
       });
     } finally {
@@ -148,7 +133,17 @@ const Contact = () => {
                     </div>
                     <div>
                       <p className="text-sm font-semibold text-foreground">{item.label}</p>
-                      <p className="text-sm text-muted-foreground mt-0.5">{item.value}</p>
+                      {item.label === "Phone" ? (
+                        <a href={`tel:${item.value.replace(/\s+/g, '')}`} className="text-sm text-muted-foreground mt-0.5 hover:text-secondary transition-colors block">
+                          {item.value}
+                        </a>
+                      ) : item.label === "Email" ? (
+                        <a href={`mailto:${item.value}`} className="text-sm text-muted-foreground mt-0.5 hover:text-secondary transition-colors block">
+                          {item.value}
+                        </a>
+                      ) : (
+                        <p className="text-sm text-muted-foreground mt-0.5">{item.value}</p>
+                      )}
                     </div>
                   </div>
                 </ScrollReveal>
