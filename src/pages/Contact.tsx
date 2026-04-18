@@ -5,8 +5,7 @@ import { z } from "zod";
 import { useState } from "react";
 import ScrollReveal from "@/components/ScrollReveal";
 import { useToast } from "@/hooks/use-toast";
-
-const API_BASE_URL = import.meta.env.VITE_API_BASE_URL ?? "";
+import { sendContactEmail } from "@/lib/frontend-mail";
 
 const contactSchema = z.object({
   name: z.string().trim().min(2, "Name is required").max(100),
@@ -35,30 +34,19 @@ const Contact = () => {
   const onSubmit = async (data: ContactForm) => {
     setIsLoading(true);
     try {
-      const response = await fetch(`${API_BASE_URL}/api/contact`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(data),
-      });
-
-      const payload = (await response.json().catch(() => null)) as { error?: string } | null;
-
-      if (!response.ok) {
-        throw new Error(payload?.error || "Unable to send your message right now.");
-      }
+      const result = await sendContactEmail(data);
 
       toast({ 
         title: "Message Sent", 
-        description: "Thanks for reaching out. Your message has been delivered successfully." 
+        description: "Thanks for reaching out. Your message has been delivered successfully.",
       });
       reset();
     } catch (error) {
       console.error("Submission error:", error);
       toast({ 
         title: "Submission Error",
-        description: error instanceof Error ? error.message : "We couldn't send your message right now. Please try again.",
+        description:
+          error instanceof Error ? error.message : "We couldn't prepare your email right now. Please try again.",
         variant: "destructive"
       });
     } finally {

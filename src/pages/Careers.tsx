@@ -6,8 +6,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import ScrollReveal from "@/components/ScrollReveal";
 import { useToast } from "@/hooks/use-toast";
-
-const API_BASE_URL = import.meta.env.VITE_API_BASE_URL ?? "";
+import { sendCareerEmail } from "@/lib/frontend-mail";
 
 const categories = ["All", "Skilled", "Semi-Skilled", "Unskilled"] as const;
 
@@ -52,31 +51,23 @@ const Careers = () => {
 
     setIsSubmitting(true);
     try {
-      const response = await fetch(`${API_BASE_URL}/api/careers`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          ...data,
-          jobTitle: applyJob,
-        }),
+      const result = await sendCareerEmail({
+        ...data,
+        jobTitle: applyJob,
       });
 
-      const payload = (await response.json().catch(() => null)) as { error?: string } | null;
-
-      if (!response.ok) {
-        throw new Error(payload?.error || "Unable to submit your application right now.");
-      }
-
-      toast({ title: "Application Submitted!", description: `Thanks ${data.name}, we'll be in touch soon.` });
+      toast({
+        title: "Application Submitted!",
+        description: `Thanks ${data.name}, we'll be in touch soon.`,
+      });
       reset();
       setApplyJob(null);
     } catch (error) {
       console.error("Application error:", error);
       toast({
         title: "Submission Error",
-        description: error instanceof Error ? error.message : "We couldn't submit your application right now. Please try again.",
+        description:
+          error instanceof Error ? error.message : "We couldn't prepare your application email right now. Please try again.",
         variant: "destructive",
       });
     } finally {

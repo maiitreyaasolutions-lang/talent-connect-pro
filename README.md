@@ -2,25 +2,41 @@
 
 ## Email setup
 
-This project now sends website form submissions through a local Node mail server.
-
 Use these commands during development:
 
 ```bash
 npm install
-npm run dev:full
+npm run dev
 ```
 
-The frontend runs on `http://localhost:8080` and the mail server runs on `http://localhost:3001`.
+The frontend runs on `http://localhost:8080`.
 
-Mail credentials are loaded from `.env`. A safe template is available in `.env.example`.
+This project now uses a frontend-only email flow.
 
-For Vercel deployments, add the same environment variables in the Vercel project settings:
+1. If `VITE_EMAILJS_SERVICE_ID`, `VITE_EMAILJS_CONTACT_TEMPLATE_ID`, `VITE_EMAILJS_CAREER_TEMPLATE_ID`, and `VITE_EMAILJS_PUBLIC_KEY` are configured, the forms send directly with EmailJS from the browser.
+2. If those variables are not configured, the form now stays on the page and shows a clear setup error instead of opening the local mail app.
+
+A safe template is available in `.env.example`.
+
+For EmailJS deployments, add these variables in Vercel project settings:
 
 ```bash
-SMTP_USER=maiitreyaasolutions@gmail.com
-SMTP_PASS=your_16_character_gmail_app_password
-MAIL_TO=maiitreyaasolutions@gmail.com
+VITE_EMAILJS_SERVICE_ID=your_service_id
+VITE_EMAILJS_CONTACT_TEMPLATE_ID=your_contact_template_id
+VITE_EMAILJS_CAREER_TEMPLATE_ID=your_career_template_id
+VITE_EMAILJS_PUBLIC_KEY=your_public_key
 ```
 
-The production site sends mail through Vercel API routes in `api/`.
+Suggested EmailJS template variables:
+
+```text
+{{to_email}}
+{{form_type}}
+{{from_name}}
+{{from_email}}
+{{phone}}
+{{subject}}
+{{job_title}}
+{{category}}
+{{message}}
+```
