@@ -6,6 +6,8 @@ import { useState } from "react";
 import ScrollReveal from "@/components/ScrollReveal";
 import { useToast } from "@/hooks/use-toast";
 
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL ?? "";
+
 const contactSchema = z.object({
   name: z.string().trim().min(2, "Name is required").max(100),
   email: z.string().trim().email("Invalid email").max(255),
@@ -33,23 +35,30 @@ const Contact = () => {
   const onSubmit = async (data: ContactForm) => {
     setIsLoading(true);
     try {
-      // Direct Email (mailto:) approach to resolve EmailJS 404 and fulfill "direct send" request
-      const mailtoUrl = `mailto:maiitreyaasolutions@gmail.com?subject=${encodeURIComponent(data.subject)}&body=${encodeURIComponent(
-        `Name: ${data.name}\nEmail: ${data.email}\nPhone: ${data.phone}\n\nMessage:\n${data.message}`
-      )}`;
-      
-      window.location.href = mailtoUrl;
+      const response = await fetch(`${API_BASE_URL}/api/contact`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      });
+
+      const payload = (await response.json().catch(() => null)) as { error?: string } | null;
+
+      if (!response.ok) {
+        throw new Error(payload?.error || "Unable to send your message right now.");
+      }
 
       toast({ 
-        title: "Redirecting to your Email Client", 
-        description: "Your message has been prepared in your default email app. Please click send there." 
+        title: "Message Sent", 
+        description: "Thanks for reaching out. Your message has been delivered successfully." 
       });
       reset();
     } catch (error) {
       console.error("Submission error:", error);
       toast({ 
-        title: "Submission Error", 
-        description: "We couldn't open your email client. Please copy our email address and contact us directly.",
+        title: "Submission Error",
+        description: error instanceof Error ? error.message : "We couldn't send your message right now. Please try again.",
         variant: "destructive"
       });
     } finally {

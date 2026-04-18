@@ -7,6 +7,8 @@ import { z } from "zod";
 import ScrollReveal from "@/components/ScrollReveal";
 import { useToast } from "@/hooks/use-toast";
 
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL ?? "";
+
 const categories = ["All", "Skilled", "Semi-Skilled", "Unskilled"] as const;
 
 const jobs = [
@@ -33,6 +35,7 @@ type ApplicationForm = z.infer<typeof applicationSchema>;
 const Careers = () => {
   const [filter, setFilter] = useState<string>("All");
   const [applyJob, setApplyJob] = useState<string | null>(null);
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
 
   const filtered = filter === "All" ? jobs : jobs.filter((j) => j.category === filter);
@@ -41,10 +44,44 @@ const Careers = () => {
     resolver: zodResolver(applicationSchema),
   });
 
-  const onSubmit = (data: ApplicationForm) => {
-    toast({ title: "Application Submitted!", description: `Thanks ${data.name}, we'll be in touch soon.` });
-    reset();
-    setApplyJob(null);
+  const onSubmit = async (data: ApplicationForm) => {
+    if (!applyJob) {
+      toast({ title: "Missing Job", description: "Please choose a job before submitting.", variant: "destructive" });
+      return;
+    }
+
+    setIsSubmitting(true);
+    try {
+      const response = await fetch(`${API_BASE_URL}/api/careers`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          ...data,
+          jobTitle: applyJob,
+        }),
+      });
+
+      const payload = (await response.json().catch(() => null)) as { error?: string } | null;
+
+      if (!response.ok) {
+        throw new Error(payload?.error || "Unable to submit your application right now.");
+      }
+
+      toast({ title: "Application Submitted!", description: `Thanks ${data.name}, we'll be in touch soon.` });
+      reset();
+      setApplyJob(null);
+    } catch (error) {
+      console.error("Application error:", error);
+      toast({
+        title: "Submission Error",
+        description: error instanceof Error ? error.message : "We couldn't submit your application right now. Please try again.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -172,8 +209,8 @@ const Careers = () => {
                   <label className="text-sm font-medium text-foreground" htmlFor="message">Message (Optional)</label>
                   <textarea {...register("message")} id="message" rows={3} className="mt-1 w-full px-4 py-2.5 rounded-lg border border-border bg-background text-foreground text-sm focus:ring-2 focus:ring-secondary focus:border-transparent outline-none resize-none" />
                 </div>
-                <button type="submit" className="w-full py-3 bg-secondary text-secondary-foreground rounded-lg font-semibold hover:bg-teal-light transition-colors">
-                  Submit Application
+                <button type="submit" disabled={isSubmitting} className="w-full py-3 bg-secondary text-secondary-foreground rounded-lg font-semibold hover:bg-teal-light transition-colors disabled:opacity-50 disabled:cursor-not-allowed">
+                  {isSubmitting ? "Submitting..." : "Submit Application"}
                 </button>
               </form>
             </motion.div>
