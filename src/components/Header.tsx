@@ -29,12 +29,12 @@ const Header = () => {
     <header
       className={cn(
         "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
-        scrolled ? "bg-card/95 backdrop-blur-md shadow-md py-2" : "bg-transparent py-4"
+        scrolled ? "bg-card/95 backdrop-blur-md shadow-md py-1.5" : "bg-transparent pt-3 pb-1.5 md:py-4"
       )}
     >
       <div className="container flex items-center justify-between">
         <Link to="/" className="flex items-center gap-2 md:gap-3 group">
-          <img src={logo} alt="Maiitreyaa Integrated Solutions LLP" className="h-12 w-12 md:h-16 md:w-16 object-contain shrink-0" width={64} height={64} />
+          <img src={logo} alt="Maiitreyaa Integrated Solutions LLP" className="h-11 w-11 md:h-16 md:w-16 object-contain shrink-0" width={64} height={64} />
           <div className="flex flex-col justify-center pt-0.5">
             <span className="font-heading font-bold text-base md:text-lg block leading-none text-[#D4AF37]">Maiitreyaa</span>
             <span className="text-[10px] font-medium tracking-wider uppercase text-[#D4AF37]/60 mt-1">Integrated Solutions LLP</span>

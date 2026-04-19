@@ -20,7 +20,7 @@ const HeroSection = () => (
       <div className="absolute inset-0 bg-navy/20 mix-blend-multiply sm:hidden" />
     </div>
 
-    <div className="container relative z-10 py-16 sm:py-24 lg:py-36">
+    <div className="container relative z-10 pt-24 pb-16 sm:py-24 lg:py-36">
       <div className="grid lg:grid-cols-12 gap-12 items-center">
         <motion.div
           initial={{ opacity: 0, x: -40 }}
