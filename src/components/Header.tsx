@@ -35,9 +35,9 @@ const Header = () => {
       <div className="container flex items-center justify-between">
         <Link to="/" className="flex items-center gap-2 md:gap-3 group">
           <img src={logo} alt="Maiitreyaa Integrated Solutions LLP" className="h-12 w-12 md:h-16 md:w-16 object-contain shrink-0" width={64} height={64} />
-          <div>
-            <span className="font-heading font-bold text-base md:text-lg block leading-tight text-[#D4AF37]">Maiitreyaa</span>
-            <span className="text-[10px] font-medium tracking-wider uppercase text-[#D4AF37]/60">Integrated Solutions LLP</span>
+          <div className="flex flex-col justify-center pt-0.5">
+            <span className="font-heading font-bold text-base md:text-lg block leading-none text-[#D4AF37]">Maiitreyaa</span>
+            <span className="text-[10px] font-medium tracking-wider uppercase text-[#D4AF37]/60 mt-1">Integrated Solutions LLP</span>
           </div>
         </Link>
 

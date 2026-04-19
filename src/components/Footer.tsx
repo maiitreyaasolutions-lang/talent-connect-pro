@@ -17,9 +17,9 @@ const Footer = () => (
               height={64}
               loading="lazy"
             />
-            <div>
-              <span className="font-heading font-bold text-base md:text-lg block leading-tight text-[#D4AF37]">Maiitreyaa</span>
-              <span className="text-[10px] font-medium tracking-wider uppercase text-[#D4AF37]/60">Integrated Solutions LLP</span>
+            <div className="flex flex-col justify-center pt-0.5">
+              <span className="font-heading font-bold text-base md:text-lg block leading-none text-[#D4AF37]">Maiitreyaa</span>
+              <span className="text-[10px] font-medium tracking-wider uppercase text-[#D4AF37]/60 mt-1">Integrated Solutions LLP</span>
             </div>
           </div>
           <p className="text-primary-foreground/70 text-sm leading-relaxed">
