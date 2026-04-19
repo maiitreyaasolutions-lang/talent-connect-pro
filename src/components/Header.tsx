@@ -35,13 +35,9 @@ const Header = () => {
       <div className="container flex items-center justify-between">
         <Link to="/" className="flex items-center gap-3 group">
           <img src={logo} alt="Maiitreyaa Integrated Solutions LLP" className="h-16 w-16 object-contain" width={64} height={64} />
-          <div className="flex flex-col">
-            <span className={cn("font-heading font-bold text-lg leading-tight transition-colors", scrolled ? "text-foreground" : "text-primary-foreground")}>
-              Maiitreyaa
-            </span>
-            <span className={cn("text-[10px] font-medium tracking-wider uppercase leading-tight transition-colors", scrolled ? "text-muted-foreground" : "text-primary-foreground/60")}>
-              Integrated Solutions LLP
-            </span>
+          <div>
+            <span className="font-heading font-bold text-lg block leading-tight text-[#D4AF37]">Maiitreyaa</span>
+            <span className="text-[10px] font-medium tracking-wider uppercase text-[#D4AF37]/60">Integrated Solutions LLP</span>
           </div>
         </Link>
 
@@ -56,8 +52,8 @@ const Header = () => {
                 location.pathname === link.path
                   ? "text-secondary font-semibold"
                   : scrolled
-                  ? "text-foreground hover:text-secondary"
-                  : "text-primary-foreground/80 hover:text-primary-foreground"
+                    ? "text-foreground hover:text-secondary"
+                    : "text-primary-foreground/80 hover:text-primary-foreground"
               )}
             >
               {link.label}

@@ -24,7 +24,7 @@ const About = () => (
               Building India's Most Trusted Integrated Workforce Partner
             </h1>
             <p className="mt-6 text-lg text-primary-foreground/70 leading-relaxed max-w-2xl">
-              Maiitreyaa Integrated Solutions LLP is a government-registered company (LLPIN: ACW-8159) based in Allahabad, Uttar Pradesh. 
+              Maiitreyaa Integrated Solutions LLP is a registered company (LLPIN: ACW-8159) based in Allahabad, Uttar Pradesh.
               We provide reliable skilled, semi-skilled, and unskilled manpower to industries across India.
             </p>
           </div>
@@ -86,10 +86,22 @@ const About = () => (
             { label: "Registered Address", value: "A-2/99 Badri Awas Yojana, Mehdauri, Teliyarganj, Allahabad, UP 211004" },
           ].map((item, i) => (
             <ScrollReveal key={item.label} delay={i * 0.05}>
-              <div className="bg-card rounded-xl p-5 border border-border">
-                <p className="text-xs font-semibold text-secondary uppercase tracking-wider mb-1">{item.label}</p>
-                <p className="text-sm text-foreground font-medium">{item.value}</p>
-              </div>
+              {item.label === "Registered Address" ? (
+                <a
+                  href="https://www.google.com/maps/search/?api=1&query=A-2/99+Badri+Awas+Yojana,+Mehdauri,+Teliyarganj,+Allahabad,+UP+211004"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-card rounded-xl p-5 border border-border hover:border-secondary transition-colors group"
+                >
+                  <p className="text-xs font-semibold text-secondary uppercase tracking-wider mb-1 group-hover:text-secondary">{item.label}</p>
+                  <p className="text-sm text-foreground font-medium">{item.value}</p>
+                </a>
+              ) : (
+                <div className="bg-card rounded-xl p-5 border border-border">
+                  <p className="text-xs font-semibold text-secondary uppercase tracking-wider mb-1">{item.label}</p>
+                  <p className="text-sm text-foreground font-medium">{item.value}</p>
+                </div>
+              )}
             </ScrollReveal>
           ))}
         </div>

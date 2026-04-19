@@ -3,8 +3,8 @@ import ScrollReveal from "@/components/ScrollReveal";
 
 const stats = [
   { value: 15000, suffix: "+", label: "Workers Deployed" },
-  { value: 10, suffix: "+", label: "Years Experience" },
   { value: 500, suffix: "+", label: "Projects Completed" },
+  { value: 48, suffix: "hr", label: "Fast Deployment" },
   { value: 98, suffix: "%", label: "Client Satisfaction" },
 ];
 

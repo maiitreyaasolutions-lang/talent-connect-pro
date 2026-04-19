@@ -1,12 +1,6 @@
 import { useState } from "react";
-import { MapPin, Clock, Briefcase, X } from "lucide-react";
-import { motion, AnimatePresence } from "framer-motion";
-import { useForm } from "react-hook-form";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { z } from "zod";
+import { Clock, Briefcase } from "lucide-react";
 import ScrollReveal from "@/components/ScrollReveal";
-import { useToast } from "@/hooks/use-toast";
-import { sendCareerEmail } from "@/lib/frontend-mail";
 
 const categories = ["All", "Skilled", "Semi-Skilled", "Unskilled"] as const;
 
@@ -21,59 +15,9 @@ const jobs = [
   { title: "Painter", category: "Semi-Skilled", location: "Kanpur", type: "Contract", desc: "Industrial painter for factory and warehouse finishing." },
 ];
 
-const applicationSchema = z.object({
-  name: z.string().trim().min(2, "Name is required").max(100),
-  email: z.string().trim().email("Invalid email").max(255),
-  phone: z.string().trim().min(10, "Invalid phone number").max(15),
-  category: z.string().min(1, "Select a category"),
-  message: z.string().trim().max(1000).optional(),
-});
-
-type ApplicationForm = z.infer<typeof applicationSchema>;
-
 const Careers = () => {
   const [filter, setFilter] = useState<string>("All");
-  const [applyJob, setApplyJob] = useState<string | null>(null);
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const { toast } = useToast();
-
   const filtered = filter === "All" ? jobs : jobs.filter((j) => j.category === filter);
-
-  const { register, handleSubmit, formState: { errors }, reset } = useForm<ApplicationForm>({
-    resolver: zodResolver(applicationSchema),
-  });
-
-  const onSubmit = async (data: ApplicationForm) => {
-    if (!applyJob) {
-      toast({ title: "Missing Job", description: "Please choose a job before submitting.", variant: "destructive" });
-      return;
-    }
-
-    setIsSubmitting(true);
-    try {
-      const result = await sendCareerEmail({
-        ...data,
-        jobTitle: applyJob,
-      });
-
-      toast({
-        title: "Application Submitted!",
-        description: `Thanks ${data.name}, we'll be in touch soon.`,
-      });
-      reset();
-      setApplyJob(null);
-    } catch (error) {
-      console.error("Application error:", error);
-      toast({
-        title: "Submission Error",
-        description:
-          error instanceof Error ? error.message : "We couldn't prepare your application email right now. Please try again.",
-        variant: "destructive",
-      });
-    } finally {
-      setIsSubmitting(false);
-    }
-  };
 
   return (
     <>
@@ -103,11 +47,10 @@ const Careers = () => {
                 <button
                   key={cat}
                   onClick={() => setFilter(cat)}
-                  className={`px-5 py-2.5 rounded-lg text-sm font-medium transition-colors ${
-                    filter === cat
-                      ? "bg-secondary text-secondary-foreground"
-                      : "bg-muted text-muted-foreground hover:bg-muted/80"
-                  }`}
+                  className={`px-5 py-2.5 rounded-lg text-sm font-medium transition-colors ${filter === cat
+                    ? "bg-secondary text-secondary-foreground"
+                    : "bg-muted text-muted-foreground hover:bg-muted/80"
+                    }`}
                 >
                   {cat}
                 </button>
@@ -126,16 +69,9 @@ const Careers = () => {
                         {job.category}
                       </span>
                     </div>
-                    <button
-                      onClick={() => setApplyJob(job.title)}
-                      className="px-4 py-2 bg-secondary text-secondary-foreground rounded-lg text-sm font-semibold hover:bg-teal-light transition-colors shrink-0"
-                    >
-                      Apply
-                    </button>
                   </div>
                   <p className="text-sm text-muted-foreground mb-4">{job.desc}</p>
                   <div className="flex flex-wrap gap-4 text-xs text-muted-foreground">
-                    <span className="flex items-center gap-1"><MapPin className="w-3.5 h-3.5" />{job.location}</span>
                     <span className="flex items-center gap-1"><Clock className="w-3.5 h-3.5" />{job.type}</span>
                     <span className="flex items-center gap-1"><Briefcase className="w-3.5 h-3.5" />{job.category}</span>
                   </div>
@@ -146,68 +82,7 @@ const Careers = () => {
         </div>
       </section>
 
-      {/* Apply Modal */}
-      <AnimatePresence>
-        {applyJob && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            className="fixed inset-0 z-50 flex items-center justify-center bg-foreground/50 backdrop-blur-sm p-4"
-            onClick={() => setApplyJob(null)}
-          >
-            <motion.div
-              initial={{ opacity: 0, scale: 0.95 }}
-              animate={{ opacity: 1, scale: 1 }}
-              exit={{ opacity: 0, scale: 0.95 }}
-              onClick={(e) => e.stopPropagation()}
-              className="bg-card rounded-2xl p-8 w-full max-w-md shadow-2xl border border-border"
-            >
-              <div className="flex items-center justify-between mb-6">
-                <h3 className="text-xl font-heading font-semibold text-foreground">Apply: {applyJob}</h3>
-                <button onClick={() => setApplyJob(null)} className="p-1 rounded-md hover:bg-muted" aria-label="Close">
-                  <X className="w-5 h-5 text-muted-foreground" />
-                </button>
-              </div>
-
-              <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
-                <div>
-                  <label className="text-sm font-medium text-foreground" htmlFor="name">Full Name</label>
-                  <input {...register("name")} id="name" className="mt-1 w-full px-4 py-2.5 rounded-lg border border-border bg-background text-foreground text-sm focus:ring-2 focus:ring-secondary focus:border-transparent outline-none" />
-                  {errors.name && <p className="text-xs text-destructive mt-1">{errors.name.message}</p>}
-                </div>
-                <div>
-                  <label className="text-sm font-medium text-foreground" htmlFor="email">Email</label>
-                  <input {...register("email")} id="email" type="email" className="mt-1 w-full px-4 py-2.5 rounded-lg border border-border bg-background text-foreground text-sm focus:ring-2 focus:ring-secondary focus:border-transparent outline-none" />
-                  {errors.email && <p className="text-xs text-destructive mt-1">{errors.email.message}</p>}
-                </div>
-                <div>
-                  <label className="text-sm font-medium text-foreground" htmlFor="phone">Phone</label>
-                  <input {...register("phone")} id="phone" className="mt-1 w-full px-4 py-2.5 rounded-lg border border-border bg-background text-foreground text-sm focus:ring-2 focus:ring-secondary focus:border-transparent outline-none" />
-                  {errors.phone && <p className="text-xs text-destructive mt-1">{errors.phone.message}</p>}
-                </div>
-                <div>
-                  <label className="text-sm font-medium text-foreground" htmlFor="category">Category</label>
-                  <select {...register("category")} id="category" className="mt-1 w-full px-4 py-2.5 rounded-lg border border-border bg-background text-foreground text-sm focus:ring-2 focus:ring-secondary focus:border-transparent outline-none">
-                    <option value="">Select category</option>
-                    <option value="Skilled">Skilled</option>
-                    <option value="Semi-Skilled">Semi-Skilled</option>
-                    <option value="Unskilled">Unskilled</option>
-                  </select>
-                  {errors.category && <p className="text-xs text-destructive mt-1">{errors.category.message}</p>}
-                </div>
-                <div>
-                  <label className="text-sm font-medium text-foreground" htmlFor="message">Message (Optional)</label>
-                  <textarea {...register("message")} id="message" rows={3} className="mt-1 w-full px-4 py-2.5 rounded-lg border border-border bg-background text-foreground text-sm focus:ring-2 focus:ring-secondary focus:border-transparent outline-none resize-none" />
-                </div>
-                <button type="submit" disabled={isSubmitting} className="w-full py-3 bg-secondary text-secondary-foreground rounded-lg font-semibold hover:bg-teal-light transition-colors disabled:opacity-50 disabled:cursor-not-allowed">
-                  {isSubmitting ? "Submitting..." : "Submit Application"}
-                </button>
-              </form>
-            </motion.div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+      {/* Jobs listings section only */}
     </>
   );
 };

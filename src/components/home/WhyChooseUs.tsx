@@ -4,7 +4,7 @@ import ScrollReveal from "@/components/ScrollReveal";
 const reasons = [
   { icon: Shield, title: "Verified Workers", desc: "Background-checked and verified workforce for your peace of mind." },
   { icon: Clock, title: "Fast Deployment", desc: "Get workers on-site within 24-48 hours of request." },
-  { icon: Award, title: "Govt. Registered LLP", desc: "Officially registered under MCA with LLPIN ACW-8159." },
+  { icon: Award, title: "Registered LLP", desc: "Officially registered under MCA with LLPIN ACW-8159." },
   { icon: Headphones, title: "24/7 Support", desc: "Dedicated account managers and round-the-clock assistance." },
   { icon: TrendingUp, title: "Scalable Teams", desc: "Easily scale workforce up or down based on project demands." },
   { icon: UserCheck, title: "Skilled Matching", desc: "Expert matching of workers to job requirements for the best fit." },

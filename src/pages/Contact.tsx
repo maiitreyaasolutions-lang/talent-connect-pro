@@ -19,7 +19,7 @@ type ContactForm = z.infer<typeof contactSchema>;
 
 const info = [
   { icon: MapPin, label: "Address", value: "A-2/99 Badri Awas Yojana, Mehdauri, Teliyarganj, Cavellary Lines, Allahabad, UP 211004" },
-  { icon: Phone, label: "Phone", value: "+91 98765 43210" },
+  { icon: Phone, label: "Phone", value: "+91 96963 18388" },
   { icon: Mail, label: "Email", value: "maiitreyaasolutions@gmail.com" },
   { icon: Clock, label: "Hours", value: "Mon – Sat: 9:00 AM – 6:00 PM" },
 ];
@@ -36,14 +36,14 @@ const Contact = () => {
     try {
       const result = await sendContactEmail(data);
 
-      toast({ 
-        title: "Message Sent", 
+      toast({
+        title: "Message Sent",
         description: "Thanks for reaching out. Your message has been delivered successfully.",
       });
       reset();
     } catch (error) {
       console.error("Submission error:", error);
-      toast({ 
+      toast({
         title: "Submission Error",
         description:
           error instanceof Error ? error.message : "We couldn't prepare your email right now. Please try again.",
@@ -136,6 +136,15 @@ const Contact = () => {
                         </a>
                       ) : item.label === "Email" ? (
                         <a href={`mailto:${item.value}`} className="text-sm text-muted-foreground mt-0.5 hover:text-secondary transition-colors block">
+                          {item.value}
+                        </a>
+                      ) : item.label === "Address" ? (
+                        <a
+                          href="https://www.google.com/maps/search/?api=1&query=A-2/99+Badri+Awas+Yojana,+Mehdauri,+Teliyarganj,+Allahabad,+Uttar+Pradesh+211004"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-sm text-muted-foreground mt-0.5 hover:text-secondary transition-colors block leading-relaxed"
+                        >
                           {item.value}
                         </a>
                       ) : (

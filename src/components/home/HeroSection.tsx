@@ -8,12 +8,12 @@ const HeroSection = () => (
   <section className="relative min-h-[90vh] flex items-center overflow-hidden">
     {/* Background image */}
     <div className="absolute inset-0">
-      <img 
-        src={heroBg} 
-        alt="Manpower Services" 
-        className="w-full h-full object-cover object-right sm:object-center lg:object-right" 
-        width={1920} 
-        height={1080} 
+      <img
+        src={heroBg}
+        alt="Manpower Services"
+        className="w-full h-full object-cover object-right sm:object-center lg:object-right"
+        width={1920}
+        height={1080}
       />
       {/* Dynamic Overlay - Optimized for readability on mobile and visibility on desktop */}
       <div className="absolute inset-0 bg-gradient-to-b from-primary/95 via-primary/80 to-primary/40 lg:bg-gradient-to-r lg:from-primary/95 lg:via-primary/50 lg:to-transparent" />
@@ -38,7 +38,7 @@ const HeroSection = () => (
             With the Right Talent
           </h1>
           <p className="text-lg sm:text-xl text-primary-foreground/80 max-w-xl mb-8 leading-relaxed">
-            Maiitreyaa Integrated Solutions LLP provides skilled, semi-skilled, and unskilled manpower 
+            Maiitreyaa Integrated Solutions LLP provides skilled, semi-skilled, and unskilled manpower
             to industries across Uttar Pradesh and India. Reliable, fast, and scalable workforce solutions.
           </p>
           <div className="flex flex-wrap gap-4 mb-10">
@@ -72,10 +72,10 @@ const HeroSection = () => (
         >
           <div className="relative xl:pl-12 group">
             <div className="w-full aspect-square max-w-[280px] sm:max-w-[340px] xl:max-w-[380px] rounded-[2.5rem] overflow-hidden shadow-2xl border-8 border-white/10 relative z-10 group bg-primary transition-transform duration-500 hover:scale-[1.02]">
-              <img 
-                src={industrialWorkers} 
-                alt="Manpower Team" 
-                className="w-full h-full object-cover grayscale-[10%] group-hover:grayscale-0 transition-all duration-700" 
+              <img
+                src={industrialWorkers}
+                alt="Manpower Team"
+                className="w-full h-full object-cover grayscale-[10%] group-hover:grayscale-0 transition-all duration-700"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-70" />
               <div className="absolute bottom-8 left-8 text-white">
@@ -83,7 +83,7 @@ const HeroSection = () => (
                 <p className="text-[10px] sm:text-xs opacity-90 font-bold uppercase tracking-[0.2em] mt-1">Workers Deployed</p>
               </div>
             </div>
-            
+
             {/* Floating cards - shifted downwards to avoid faces */}
             <motion.div
               animate={{ y: [0, -10, 0] }}
@@ -96,7 +96,7 @@ const HeroSection = () => (
                 </div>
                 <div>
                   <p className="text-xs font-bold text-primary uppercase tracking-tighter">LLPIN: ACW-8159</p>
-                  <p className="text-[10px] text-muted-foreground font-semibold">Govt. Registered LLP</p>
+                  <p className="text-[10px] text-muted-foreground font-semibold">Registered LLP</p>
                 </div>
               </div>
             </motion.div>

@@ -9,17 +9,17 @@ const Footer = () => (
         {/* About */}
         <div>
           <div className="flex items-center gap-3 mb-4">
-            <img 
-              src={logo} 
-              alt="Maiitreyaa" 
-              className="h-16 w-16 object-contain brightness-0 invert" 
-              width={64} 
-              height={64} 
-              loading="lazy" 
+            <img
+              src={logo}
+              alt="Maiitreyaa"
+              className="h-16 w-16 object-contain"
+              width={64}
+              height={64}
+              loading="lazy"
             />
             <div>
-              <span className="font-heading font-bold text-lg block leading-tight">Maiitreyaa</span>
-              <span className="text-[10px] font-medium tracking-wider uppercase text-primary-foreground/60">Integrated Solutions LLP</span>
+              <span className="font-heading font-bold text-lg block leading-tight text-[#D4AF37]">Maiitreyaa</span>
+              <span className="text-[10px] font-medium tracking-wider uppercase text-[#D4AF37]/60">Integrated Solutions LLP</span>
             </div>
           </div>
           <p className="text-primary-foreground/70 text-sm leading-relaxed">
@@ -65,11 +65,18 @@ const Footer = () => (
           <ul className="space-y-3 text-sm text-primary-foreground/70">
             <li className="flex items-start gap-2">
               <MapPin className="w-5 h-5 mt-0.5 shrink-0 text-secondary" />
-              A-2/99 Badri Awas Yojana, Mehdauri, Teliyarganj, Allahabad, Uttar Pradesh 211004
+              <a
+                href="https://www.google.com/maps/search/?api=1&query=A-2/99+Badri+Awas+Yojana,+Mehdauri,+Teliyarganj,+Allahabad,+Uttar+Pradesh+211004"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-secondary transition-colors"
+              >
+                A-2/99 Badri Awas Yojana, Mehdauri, Teliyarganj, Allahabad, Uttar Pradesh 211004
+              </a>
             </li>
             <li className="flex items-center gap-2">
               <Phone className="w-5 h-5 shrink-0 text-secondary" />
-              <a href="tel:+919876543210" className="hover:text-secondary transition-colors">+91 98765 43210</a>
+              <a href="tel:+919696318388" className="hover:text-secondary transition-colors">+91 96963 18388</a>
             </li>
             <li className="flex items-center gap-2">
               <Mail className="w-5 h-5 shrink-0 text-secondary" />
