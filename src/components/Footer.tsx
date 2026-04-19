@@ -86,8 +86,8 @@ const Footer = () => (
         </div>
       </div>
 
-      <div className="mt-12 pt-8 border-t border-primary-foreground/10 flex flex-col sm:flex-row items-center justify-between gap-4">
-        <div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-4 text-sm text-primary-foreground/50">
+      <div className="mt-12 pt-8 border-t border-primary-foreground/10 flex items-center justify-center sm:justify-between gap-4">
+        <div className="flex flex-col sm:flex-row items-center gap-3 sm:gap-4 text-sm text-primary-foreground/50 text-center sm:text-left">
           <p>© {new Date().getFullYear()} Maiitreyaa Integrated Solutions LLP. All rights reserved.</p>
           <span className="hidden sm:inline text-primary-foreground/20">|</span>
           <p>
