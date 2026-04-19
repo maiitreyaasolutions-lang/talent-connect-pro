@@ -8,17 +8,17 @@ const Footer = () => (
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
         {/* About */}
         <div>
-          <div className="flex items-center gap-3 mb-4">
+          <div className="flex items-center gap-2 md:gap-3 mb-4">
             <img
               src={logo}
               alt="Maiitreyaa"
-              className="h-16 w-16 object-contain"
+              className="h-12 w-12 md:h-16 md:w-16 object-contain shrink-0"
               width={64}
               height={64}
               loading="lazy"
             />
             <div>
-              <span className="font-heading font-bold text-lg block leading-tight text-[#D4AF37]">Maiitreyaa</span>
+              <span className="font-heading font-bold text-base md:text-lg block leading-tight text-[#D4AF37]">Maiitreyaa</span>
               <span className="text-[10px] font-medium tracking-wider uppercase text-[#D4AF37]/60">Integrated Solutions LLP</span>
             </div>
           </div>
@@ -87,15 +87,20 @@ const Footer = () => (
       </div>
 
       <div className="mt-12 pt-8 border-t border-primary-foreground/10 flex flex-col sm:flex-row items-center justify-between gap-4">
-        <p className="text-sm text-primary-foreground/50">
-          © {new Date().getFullYear()} Maiitreyaa Integrated Solutions LLP. All rights reserved.
-        </p>
-        <div className="flex gap-4">
-          {["Facebook", "LinkedIn", "Instagram"].map((s) => (
-            <a key={s} href="#" className="text-sm text-primary-foreground/50 hover:text-secondary transition-colors" aria-label={s}>
-              {s}
+        <div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-4 text-sm text-primary-foreground/50">
+          <p>© {new Date().getFullYear()} Maiitreyaa Integrated Solutions LLP. All rights reserved.</p>
+          <span className="hidden sm:inline text-primary-foreground/20">|</span>
+          <p>
+            Developed by{" "}
+            <a
+              href="https://abhishek-s-animated-portfolio.vercel.app"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-secondary hover:text-secondary/80 font-medium transition-colors"
+            >
+              Abhishek Mishra
             </a>
-          ))}
+          </p>
         </div>
       </div>
     </div>
