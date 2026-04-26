@@ -10,14 +10,12 @@ const team = [
     role: "Designated Partner",
     email: "kunwarjaisingh1995@gmail.com",
     image: jaySingh,
-    desc: "Co-founder and strategic leader driving company vision and growth."
   },
   {
     name: "Kunwar Vaibhaw Singh",
     role: "Designated Partner",
     email: "vksingh1best@gmail.com",
     image: vaibhawSingh,
-    desc: "Co-founder overseeing operations, logistics, and client relations."
   },
 ];
 
@@ -183,8 +181,7 @@ const About = () => (
                 >
                   {member.email}
                 </a>
-                <p className="text-sm text-muted-foreground/80 mt-6 leading-relaxed flex-grow">{member.desc}</p>
-                <div className="mt-8 pt-6 border-t border-border/50">
+                <div className="mt-auto pt-6 border-t border-border/50">
                   <div className="flex justify-center gap-4">
                     <div className="w-8 h-8 rounded-lg bg-muted flex items-center justify-center text-muted-foreground group-hover:text-secondary group-hover:bg-secondary/10 transition-colors">
                       <Users className="w-4 h-4" />
