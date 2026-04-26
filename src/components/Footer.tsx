@@ -35,7 +35,7 @@ const Footer = () => (
             {[
               { label: "Home", path: "/" },
               { label: "About Us", path: "/about" },
-              { label: "Careers", path: "/careers" },
+              { label: "Services", path: "/services" },
               { label: "Contact", path: "/contact" },
             ].map((l) => (
               <li key={l.path}>
@@ -89,18 +89,6 @@ const Footer = () => (
       <div className="mt-12 pt-8 border-t border-primary-foreground/10 flex items-center justify-center sm:justify-between gap-4">
         <div className="flex flex-col sm:flex-row items-center gap-3 sm:gap-4 text-sm text-primary-foreground/50 text-center sm:text-left">
           <p>© {new Date().getFullYear()} Maiitreyaa Integrated Solutions LLP. All rights reserved.</p>
-          <span className="hidden sm:inline text-primary-foreground/20">|</span>
-          <p>
-            Developed by{" "}
-            <a
-              href="https://abhishek-s-animated-portfolio.vercel.app"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-secondary hover:text-secondary/80 font-medium transition-colors"
-            >
-              Abhishek Mishra
-            </a>
-          </p>
         </div>
       </div>
     </div>

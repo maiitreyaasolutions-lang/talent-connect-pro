@@ -1,9 +1,24 @@
 import { Target, Eye, Users, Award, Building, Globe } from "lucide-react";
 import ScrollReveal from "@/components/ScrollReveal";
 
+import jaySingh from "@/assets/jay-singh.jpg";
+import vaibhawSingh from "@/assets/vaibhaw-singh.jpg";
+
 const team = [
-  { name: "Kunwar Jay Singh", role: "Designated Partner", desc: "Co-founder and strategic leader driving company vision" },
-  { name: "Kunwar Vaibhaw Singh", role: "Designated Partner", desc: "Co-founder overseeing operations and client relations" },
+  {
+    name: "Kunwar Jay Singh",
+    role: "Designated Partner",
+    email: "kunwarjaisingh1995@gmail.com",
+    image: jaySingh,
+    desc: "Co-founder and strategic leader driving company vision and growth."
+  },
+  {
+    name: "Kunwar Vaibhaw Singh",
+    role: "Designated Partner",
+    email: "vksingh1best@gmail.com",
+    image: vaibhawSingh,
+    desc: "Co-founder overseeing operations, logistics, and client relations."
+  },
 ];
 
 const timeline = [
@@ -76,28 +91,28 @@ const About = () => (
 
         <div className="max-w-3xl mx-auto grid sm:grid-cols-2 gap-4">
           {[
+            { label: "Registered Address", value: "A-2/99 Badri Awas Yojana, Mehdauri, Teliyarganj, Allahabad, UP 211004" },
+            { label: "RD Region", value: "RD Delhi, Northern Region" },
             { label: "LLPIN", value: "ACW-8159" },
             { label: "LLP Name", value: "Maiitreyaa Integrated Solutions LLP" },
             { label: "ROC", value: "ROC Uttar Pradesh I" },
             { label: "Date of Incorporation", value: "30/03/2026" },
             { label: "Status", value: "Active" },
             { label: "Category", value: "Small LLP" },
-            { label: "RD Region", value: "RD Delhi, Northern Region" },
-            { label: "Registered Address", value: "A-2/99 Badri Awas Yojana, Mehdauri, Teliyarganj, Allahabad, UP 211004" },
           ].map((item, i) => (
-            <ScrollReveal key={item.label} delay={i * 0.05}>
+            <ScrollReveal key={item.label} delay={i * 0.05} className={item.label === "Registered Address" || item.label === "RD Region" ? "sm:col-span-2 lg:col-span-1" : ""}>
               {item.label === "Registered Address" ? (
                 <a
                   href="https://www.google.com/maps/search/?api=1&query=A-2/99+Badri+Awas+Yojana,+Mehdauri,+Teliyarganj,+Allahabad,+UP+211004"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="bg-card rounded-xl p-5 border border-border hover:border-secondary transition-colors group"
+                  className="bg-card rounded-xl p-5 border border-border hover:border-secondary transition-colors group block h-full"
                 >
                   <p className="text-xs font-semibold text-secondary uppercase tracking-wider mb-1 group-hover:text-secondary">{item.label}</p>
                   <p className="text-sm text-foreground font-medium">{item.value}</p>
                 </a>
               ) : (
-                <div className="bg-card rounded-xl p-5 border border-border">
+                <div className="bg-card rounded-xl p-5 border border-border h-full">
                   <p className="text-xs font-semibold text-secondary uppercase tracking-wider mb-1">{item.label}</p>
                   <p className="text-sm text-foreground font-medium">{item.value}</p>
                 </div>
@@ -156,13 +171,26 @@ const About = () => (
         <div className="grid sm:grid-cols-2 gap-6 max-w-2xl mx-auto">
           {team.map((member, i) => (
             <ScrollReveal key={member.name} delay={i * 0.1}>
-              <div className="bg-card rounded-xl p-6 border border-border text-center group hover:shadow-lg transition-shadow">
-                <div className="w-20 h-20 rounded-full bg-muted mx-auto mb-4 flex items-center justify-center">
-                  <Users className="w-8 h-8 text-muted-foreground" />
+              <div className="bg-card rounded-2xl p-8 border border-border text-center group hover:shadow-xl hover:shadow-secondary/5 hover:border-secondary/20 transition-all duration-300 h-full flex flex-col">
+                <div className="w-24 h-24 rounded-full overflow-hidden mx-auto mb-6 border-2 border-secondary/20 group-hover:border-secondary transition-colors duration-500">
+                  <img src={member.image} alt={member.name} className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500" />
                 </div>
-                <h3 className="font-heading font-semibold text-foreground">{member.name}</h3>
-                <p className="text-sm text-secondary font-medium mt-1">{member.role}</p>
-                <p className="text-xs text-muted-foreground mt-2">{member.desc}</p>
+                <h3 className="font-heading font-bold text-foreground text-lg">{member.name}</h3>
+                <p className="text-secondary font-semibold text-sm mt-1">{member.role}</p>
+                <a
+                  href={`mailto:${member.email}`}
+                  className="text-xs text-muted-foreground hover:text-secondary transition-colors block mt-2 underline underline-offset-4 decoration-secondary/30"
+                >
+                  {member.email}
+                </a>
+                <p className="text-sm text-muted-foreground/80 mt-6 leading-relaxed flex-grow">{member.desc}</p>
+                <div className="mt-8 pt-6 border-t border-border/50">
+                  <div className="flex justify-center gap-4">
+                    <div className="w-8 h-8 rounded-lg bg-muted flex items-center justify-center text-muted-foreground group-hover:text-secondary group-hover:bg-secondary/10 transition-colors">
+                      <Users className="w-4 h-4" />
+                    </div>
+                  </div>
+                </div>
               </div>
             </ScrollReveal>
           ))}
