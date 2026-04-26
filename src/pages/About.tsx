@@ -170,8 +170,8 @@ const About = () => (
           {team.map((member, i) => (
             <ScrollReveal key={member.name} delay={i * 0.1}>
               <div className="bg-card rounded-2xl p-8 border border-border text-center group hover:shadow-xl hover:shadow-secondary/5 hover:border-secondary/20 transition-all duration-300 h-full flex flex-col">
-                <div className="w-24 h-24 rounded-full overflow-hidden mx-auto mb-6 border-2 border-secondary/20 group-hover:border-secondary transition-colors duration-500">
-                  <img src={member.image} alt={member.name} className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500" />
+                <div className="w-36 h-36 rounded-full overflow-hidden mx-auto mb-6 border-4 border-secondary/10 group-hover:border-secondary/30 transition-all duration-500 shadow-inner">
+                  <img src={member.image} alt={member.name} className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700" />
                 </div>
                 <h3 className="font-heading font-bold text-foreground text-lg">{member.name}</h3>
                 <p className="text-secondary font-semibold text-sm mt-1">{member.role}</p>
