@@ -105,7 +105,7 @@ const About = () => (
 
         <div className="max-w-3xl mx-auto grid sm:grid-cols-2 gap-4">
           {[
-            { label: "Registered Address", value: "A2, AII/94, Mehdaori Gaon, Rasulabad, Teliarganj, Prayagraj, Uttar Pradesh 211004" },
+            { label: "Registered Address", value: "A-2/99 Badri Awas Yozana, Mehdauri, Teliyarganj, Cavellary Lines, Allahabad, Uttar Pradesh, India, 211004" },
             { label: "RD Region", value: "RD Delhi, Northern Region" },
             { label: "LLPIN", value: "ACW-8159" },
             { label: "LLP Name", value: "Maiitreyaa Integrated Solutions LLP" },
@@ -117,7 +117,7 @@ const About = () => (
             <ScrollReveal key={item.label} delay={i * 0.05} className={item.label === "Registered Address" || item.label === "RD Region" ? "sm:col-span-2 lg:col-span-1" : ""}>
               {item.label === "Registered Address" ? (
                 <a
-                  href="https://www.google.com/maps/search/?api=1&query=A2,+AII/94,+Mehdaori+Gaon,+Rasulabad,+Teliarganj,+Prayagraj,+Uttar+Pradesh+211004"
+                  href="https://www.google.com/maps/place/25.497216,81.8566275"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="bg-card rounded-xl p-5 border border-border hover:border-secondary transition-colors group block h-full"

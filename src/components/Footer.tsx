@@ -66,12 +66,12 @@ const Footer = () => (
             <li className="flex items-start gap-2">
               <MapPin className="w-5 h-5 mt-0.5 shrink-0 text-secondary" />
               <a
-                href="https://www.google.com/maps/search/?api=1&query=A2,+AII/94,+Mehdaori+Gaon,+Rasulabad,+Teliarganj,+Prayagraj,+Uttar+Pradesh+211004"
+                href="https://www.google.com/maps/place/25.497216,81.8566275"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hover:text-secondary transition-colors"
               >
-                A2, AII/94, Mehdaori Gaon, Rasulabad, Teliarganj, Prayagraj, Uttar Pradesh 211004
+                A-2/99 Badri Awas Yozana, Mehdauri, Teliyarganj, Cavellary Lines, Allahabad, Uttar Pradesh, India, 211004
               </a>
             </li>
             <li className="flex items-center gap-2">

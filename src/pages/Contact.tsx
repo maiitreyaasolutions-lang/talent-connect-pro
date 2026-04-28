@@ -18,7 +18,7 @@ const contactSchema = z.object({
 type ContactForm = z.infer<typeof contactSchema>;
 
 const info = [
-  { icon: MapPin, label: "Address", value: "A2, AII/94, Mehdaori Gaon, Rasulabad, Teliarganj, Prayagraj, Uttar Pradesh 211004" },
+  { icon: MapPin, label: "Address", value: "A-2/99 Badri Awas Yozana, Mehdauri, Teliyarganj, Cavellary Lines, Allahabad, Uttar Pradesh, India, 211004" },
   { icon: Phone, label: "Phone", value: "+91 96963 18388" },
   { icon: Mail, label: "Email", value: "maiitreyaasolutions@gmail.com" },
   { icon: Clock, label: "Hours", value: "Mon – Sat: 9:00 AM – 6:00 PM" },
@@ -140,7 +140,7 @@ const Contact = () => {
                         </a>
                       ) : item.label === "Address" ? (
                         <a
-                          href="https://www.google.com/maps/search/?api=1&query=A2,+AII/94,+Mehdaori+Gaon,+Rasulabad,+Teliarganj,+Prayagraj,+Uttar+Pradesh+211004"
+                          href="https://www.google.com/maps/place/25.497216,81.8566275"
                           target="_blank"
                           rel="noopener noreferrer"
                           className="text-sm text-muted-foreground mt-0.5 hover:text-secondary transition-colors block leading-relaxed"
@@ -160,7 +160,7 @@ const Contact = () => {
                 <div className="bg-muted rounded-xl overflow-hidden border border-border">
                   <iframe
                     title="Maiitreyaa Office Location"
-                    src="https://maps.google.com/maps?q=A2,+AII/94,+Mehdaori+Gaon,+Rasulabad,+Teliarganj,+Prayagraj,+Uttar+Pradesh+211004&t=&z=13&ie=UTF8&iwloc=&output=embed"
+                    src="https://maps.google.com/maps?q=25.497216,81.8566275&t=&z=15&ie=UTF8&iwloc=&output=embed"
                     className="w-full h-48"
                     style={{ border: 0 }}
                     allowFullScreen
