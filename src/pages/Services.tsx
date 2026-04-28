@@ -58,21 +58,21 @@ const manpowerSubcategories = [
     category: "Skilled",
     icon: Wrench,
     desc: "Certified professionals with specialized technical training.",
-    items: ["Electricians", "Plumbers", "Welders", "Machine Operators", "Technicians", "Engineers", "IT Professionals"]
+    items: ["Electricians", "Plumbers", "Welders", "Machine Operators", "Technicians", "Engineers", "IT Professionals", "ANM GNM Nurses", "Computer Operator"]
   },
   {
     title: "Semi-Skilled Workers",
     category: "Semi-Skilled",
     icon: HardHat,
     desc: "Trained workforce for roles requiring moderate technical knowledge.",
-    items: ["Construction Helpers", "Logistics Assistants", "Drivers", "Warehouse Staff", "Security Guards"]
+    items: ["Construction Helpers", "Logistics Assistants", "Drivers", "Warehouse Staff", "Security Guards", "Home Care Assistant"]
   },
   {
     title: "Unskilled Workers",
     category: "Unskilled",
     icon: Hammer,
     desc: "Reliable labor force for general tasks and support roles.",
-    items: ["General Labor", "Loaders & Unloaders", "Cleaning Staff", "Office Boys", "Support Staff"]
+    items: ["General Labor", "Loaders & Unloaders", "Cleaning Staff", "Office Boys", "Support Staff", "Housekeeping Person"]
   }
 ];
 

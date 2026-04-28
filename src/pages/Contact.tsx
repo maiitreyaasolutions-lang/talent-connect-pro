@@ -18,7 +18,7 @@ const contactSchema = z.object({
 type ContactForm = z.infer<typeof contactSchema>;
 
 const info = [
-  { icon: MapPin, label: "Address", value: "A-2/99 Badri Awas Yojana, Mehdauri, Teliyarganj, Cavellary Lines, Allahabad, UP 211004" },
+  { icon: MapPin, label: "Address", value: "A2, AII/94, Mehdaori Gaon, Rasulabad, Teliarganj, Prayagraj, Uttar Pradesh 211004" },
   { icon: Phone, label: "Phone", value: "+91 96963 18388" },
   { icon: Mail, label: "Email", value: "maiitreyaasolutions@gmail.com" },
   { icon: Clock, label: "Hours", value: "Mon – Sat: 9:00 AM – 6:00 PM" },
@@ -140,7 +140,7 @@ const Contact = () => {
                         </a>
                       ) : item.label === "Address" ? (
                         <a
-                          href="https://www.google.com/maps/search/?api=1&query=A-2/99+Badri+Awas+Yojana,+Mehdauri,+Teliyarganj,+Allahabad,+Uttar+Pradesh+211004"
+                          href="https://www.google.com/maps/search/?api=1&query=A2,+AII/94,+Mehdaori+Gaon,+Rasulabad,+Teliarganj,+Prayagraj,+Uttar+Pradesh+211004"
                           target="_blank"
                           rel="noopener noreferrer"
                           className="text-sm text-muted-foreground mt-0.5 hover:text-secondary transition-colors block leading-relaxed"
@@ -160,7 +160,7 @@ const Contact = () => {
                 <div className="bg-muted rounded-xl overflow-hidden border border-border">
                   <iframe
                     title="Maiitreyaa Office Location"
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3602.8!2d81.85!3d25.45!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjXCsDI3JzAwLjAiTiA4McKwNTEnMDAuMCJF!5e0!3m2!1sen!2sin!4v1"
+                    src="https://maps.google.com/maps?q=A2,+AII/94,+Mehdaori+Gaon,+Rasulabad,+Teliarganj,+Prayagraj,+Uttar+Pradesh+211004&t=&z=13&ie=UTF8&iwloc=&output=embed"
                     className="w-full h-48"
                     style={{ border: 0 }}
                     allowFullScreen

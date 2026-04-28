@@ -3,6 +3,7 @@ import ScrollReveal from "@/components/ScrollReveal";
 
 import jaySingh from "@/assets/jay-singh.jpg";
 import vaibhawSingh from "@/assets/vaibhaw-singh.jpg";
+import surajManiTripathi from "@/assets/suraj-mani-tripathi-cropped.jpg";
 
 const team = [
   {
@@ -10,12 +11,27 @@ const team = [
     role: "Designated Partner",
     email: "kunwarjaisingh1995@gmail.com",
     image: jaySingh,
+    education: [
+      "Post-graduation - M.Sc. Biotechnology",
+      "Sam Higginbottom University of Agriculture, Technology and Sciences",
+      "Prayagraj, Uttar Pradesh"
+    ]
   },
   {
     name: "Kunwar Vaibhaw Singh",
     role: "Designated Partner",
     email: "vksingh1best@gmail.com",
     image: vaibhawSingh,
+    education: [
+      "M.Com (Finance)",
+      "Delhi School of Economics, University of Delhi"
+    ]
+  },
+  {
+    name: "Suraj Mani Tripathi",
+    role: "Accounting Manager",
+    email: "surajmanitripathi03@gmail.com",
+    image: surajManiTripathi,
   },
 ];
 
@@ -89,7 +105,7 @@ const About = () => (
 
         <div className="max-w-3xl mx-auto grid sm:grid-cols-2 gap-4">
           {[
-            { label: "Registered Address", value: "A-2/99 Badri Awas Yojana, Mehdauri, Teliyarganj, Allahabad, UP 211004" },
+            { label: "Registered Address", value: "A2, AII/94, Mehdaori Gaon, Rasulabad, Teliarganj, Prayagraj, Uttar Pradesh 211004" },
             { label: "RD Region", value: "RD Delhi, Northern Region" },
             { label: "LLPIN", value: "ACW-8159" },
             { label: "LLP Name", value: "Maiitreyaa Integrated Solutions LLP" },
@@ -101,7 +117,7 @@ const About = () => (
             <ScrollReveal key={item.label} delay={i * 0.05} className={item.label === "Registered Address" || item.label === "RD Region" ? "sm:col-span-2 lg:col-span-1" : ""}>
               {item.label === "Registered Address" ? (
                 <a
-                  href="https://www.google.com/maps/search/?api=1&query=A-2/99+Badri+Awas+Yojana,+Mehdauri,+Teliyarganj,+Allahabad,+UP+211004"
+                  href="https://www.google.com/maps/search/?api=1&query=A2,+AII/94,+Mehdaori+Gaon,+Rasulabad,+Teliarganj,+Prayagraj,+Uttar+Pradesh+211004"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="bg-card rounded-xl p-5 border border-border hover:border-secondary transition-colors group block h-full"
@@ -166,7 +182,7 @@ const About = () => (
           </div>
         </ScrollReveal>
 
-        <div className="grid sm:grid-cols-2 gap-6 max-w-2xl mx-auto">
+        <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
           {team.map((member, i) => (
             <ScrollReveal key={member.name} delay={i * 0.1}>
               <div className="bg-card rounded-2xl p-8 border border-border text-center group hover:shadow-xl hover:shadow-secondary/5 hover:border-secondary/20 transition-all duration-300 h-full flex flex-col">
@@ -175,9 +191,16 @@ const About = () => (
                 </div>
                 <h3 className="font-heading font-bold text-foreground text-lg">{member.name}</h3>
                 <p className="text-secondary font-semibold text-sm mt-1">{member.role}</p>
+                {member.education && (
+                  <div className="text-xs text-muted-foreground mt-3 mb-2 px-1">
+                    {member.education.map((line, idx) => (
+                      <p key={idx} className="leading-tight mb-1">{line}</p>
+                    ))}
+                  </div>
+                )}
                 <a
                   href={`mailto:${member.email}`}
-                  className="text-xs text-muted-foreground hover:text-secondary transition-colors block mt-2 underline underline-offset-4 decoration-secondary/30"
+                  className={`text-xs text-muted-foreground hover:text-secondary transition-colors block underline underline-offset-4 decoration-secondary/30 ${member.education ? 'mt-2' : 'mt-4'}`}
                 >
                   {member.email}
                 </a>
