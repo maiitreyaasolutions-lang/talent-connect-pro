@@ -117,7 +117,7 @@ const About = () => (
             <ScrollReveal key={item.label} delay={i * 0.05} className={item.label === "Registered Address" || item.label === "RD Region" ? "sm:col-span-2 lg:col-span-1" : ""}>
               {item.label === "Registered Address" ? (
                 <a
-                  href="https://www.google.com/maps/place/25.497216,81.8566275"
+                  href="https://www.google.com/maps/place/25%C2%B029'50.0%22N+81%C2%B051'23.9%22E"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="bg-card rounded-xl p-5 border border-border hover:border-secondary transition-colors group block h-full"

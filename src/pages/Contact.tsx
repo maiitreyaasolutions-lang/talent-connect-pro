@@ -140,7 +140,7 @@ const Contact = () => {
                         </a>
                       ) : item.label === "Address" ? (
                         <a
-                          href="https://www.google.com/maps/place/25.497216,81.8566275"
+                          href="https://www.google.com/maps/place/25%C2%B029'50.0%22N+81%C2%B051'23.9%22E"
                           target="_blank"
                           rel="noopener noreferrer"
                           className="text-sm text-muted-foreground mt-0.5 hover:text-secondary transition-colors block leading-relaxed"

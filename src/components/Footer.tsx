@@ -66,7 +66,7 @@ const Footer = () => (
             <li className="flex items-start gap-2">
               <MapPin className="w-5 h-5 mt-0.5 shrink-0 text-secondary" />
               <a
-                href="https://www.google.com/maps/place/25.497216,81.8566275"
+                href="https://www.google.com/maps/place/25%C2%B029'50.0%22N+81%C2%B051'23.9%22E"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hover:text-secondary transition-colors"
