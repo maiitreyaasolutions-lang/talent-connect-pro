@@ -60,7 +60,6 @@ const HeroSection = () => (
           <div className="flex flex-wrap gap-4 sm:gap-6 text-sm sm:text-base font-bold sm:font-medium text-primary-foreground">
             <span className="flex items-center gap-2 bg-black/20 sm:bg-white/5 px-3 py-1.5 rounded-lg border border-white/20 sm:border-white/10 backdrop-blur-sm"><CheckCircle className="w-4 h-4 text-secondary" /> Verified Workers</span>
             <span className="flex items-center gap-2 bg-black/20 sm:bg-white/5 px-3 py-1.5 rounded-lg border border-white/20 sm:border-white/10 backdrop-blur-sm"><Zap className="w-4 h-4 text-secondary" /> 48hr Deployment</span>
-            <span className="flex items-center gap-2 bg-black/20 sm:bg-white/5 px-3 py-1.5 rounded-lg border border-white/20 sm:border-white/10 backdrop-blur-sm"><Users className="w-4 h-4 text-secondary" /> 15,000+ Deployed</span>
           </div>
         </motion.div>
 
@@ -78,10 +77,6 @@ const HeroSection = () => (
                 className="w-full h-full object-cover grayscale-[10%] group-hover:grayscale-0 transition-all duration-700"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-70" />
-              <div className="absolute bottom-8 left-8 text-white">
-                <p className="font-heading text-3xl sm:text-4xl font-extrabold tracking-tight">15,000+</p>
-                <p className="text-[10px] sm:text-xs opacity-90 font-bold uppercase tracking-[0.2em] mt-1">Workers Deployed</p>
-              </div>
             </div>
 
             {/* Floating cards - shifted downwards to avoid faces */}

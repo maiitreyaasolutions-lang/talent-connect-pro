@@ -172,7 +172,9 @@ const Services = () => {
                     </div>
                     <h4 className="text-base font-heading font-bold text-foreground mb-2">{item}</h4>
                     <p className="text-xs text-muted-foreground leading-relaxed">
-                      Professional {item.toLowerCase()} services tailored for industrial, commercial, and residential projects.
+                      {item === "ANM GNM Nurses"
+                        ? `Professional ${item.toLowerCase()} services tailored for private and government hospitals.`
+                        : `Professional ${item.toLowerCase()} services tailored for industrial, commercial, and residential projects.`}
                     </p>
                     <div className="mt-auto pt-4 flex items-center text-xs font-semibold text-secondary opacity-0 group-hover:opacity-100 transition-opacity">
                       Learn More <div className="ml-1 w-4 h-[1px] bg-secondary" />
