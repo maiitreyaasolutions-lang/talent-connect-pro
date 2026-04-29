@@ -53,7 +53,7 @@ const About = () => (
               Building India's Most Trusted Integrated Workforce Partner
             </h1>
             <p className="mt-6 text-lg text-primary-foreground/70 leading-relaxed max-w-2xl">
-              Maiitreyaa Integrated Solutions LLP is a registered company (LLPIN: ACW-8159) based in Allahabad, Uttar Pradesh.
+              Maiitreyaa Integrated Solutions LLP is a Registered LLP (LLPIN: ACW-8159) based in Allahabad, Uttar Pradesh.
               We provide reliable skilled, semi-skilled, and unskilled manpower to industries across India.
             </p>
           </div>
@@ -96,7 +96,7 @@ const About = () => (
       <div className="container">
         <ScrollReveal>
           <div className="text-center max-w-2xl mx-auto mb-16">
-            <span className="text-sm font-semibold text-secondary uppercase tracking-wider">Company Details</span>
+            <span className="text-sm font-semibold text-secondary uppercase tracking-wider">LLP Details</span>
             <h2 className="mt-3 text-3xl sm:text-4xl font-heading font-bold text-foreground">
               Officially Registered & Compliant
             </h2>
