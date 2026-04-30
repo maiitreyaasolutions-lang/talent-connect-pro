@@ -38,7 +38,7 @@ const HeroSection = () => (
             <span className="text-secondary">Workforce</span>{" "}
             With the Right Talent
           </h1>
-          <p className="text-lg sm:text-xl text-primary-foreground/80 max-w-xl mb-8 leading-relaxed">
+          <p className="text-lg sm:text-xl text-primary-foreground/90 max-w-xl mb-8 leading-relaxed">
             Maiitreyaa Integrated Solutions LLP provides skilled, semi-skilled, and unskilled manpower
             to industries across Uttar Pradesh and India. Reliable, fast, and scalable workforce solutions.
           </p>

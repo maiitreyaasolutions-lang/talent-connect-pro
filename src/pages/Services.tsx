@@ -99,7 +99,7 @@ const Services = () => {
               <h1 className="mt-3 text-4xl sm:text-5xl font-heading font-bold text-primary-foreground leading-tight">
                 Integrated Solutions for All Sectors
               </h1>
-              <p className="mt-6 text-lg text-primary-foreground/70 leading-relaxed">
+              <p className="mt-6 text-lg text-primary-foreground/80 leading-relaxed">
                 At Maiitreyaa Integrated Solutions LLP, we provide comprehensive, end-to-end solutions across manpower, production, facility support, and environmental services for both private and government sectors.
               </p>
             </div>
@@ -176,7 +176,7 @@ const Services = () => {
                       </div>
                       <span className="text-[9px] font-bold uppercase tracking-widest px-2 py-1 bg-muted rounded text-muted-foreground">{cat.category}</span>
                     </div>
-                    <h4 className="text-base font-heading font-bold text-foreground mb-2">{item}</h4>
+                    <h3 className="text-base font-heading font-bold text-foreground mb-2">{item}</h3>
                     <p className="text-xs text-muted-foreground leading-relaxed">
                       {item === "ANM GNM Nurses"
                         ? `Professional ${item.toLowerCase()} services tailored for private and government hospitals.`
@@ -202,7 +202,7 @@ const Services = () => {
 
             <ScrollReveal>
               <h2 className="text-3xl md:text-4xl font-heading font-bold mb-6">Need a Custom Solution?</h2>
-              <p className="text-lg text-primary-foreground/70 mb-10 max-w-2xl mx-auto">
+              <p className="text-lg text-primary-foreground/80 mb-10 max-w-2xl mx-auto">
                 Whatever your industry or scale, Maiitreyaa Integrated Solutions LLP has the expertise to support your growth.
               </p>
               <a

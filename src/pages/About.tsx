@@ -58,7 +58,7 @@ const About = () => (
             <h1 className="mt-3 text-4xl sm:text-5xl font-heading font-bold text-primary-foreground leading-tight">
               Building India's Most Trusted Integrated Workforce Partner
             </h1>
-            <p className="mt-6 text-lg text-primary-foreground/70 leading-relaxed max-w-2xl">
+            <p className="mt-6 text-lg text-primary-foreground/80 leading-relaxed max-w-2xl">
               Maiitreyaa Integrated Solutions LLP is a Registered LLP (LLPIN: ACW-8159) based in Allahabad, Uttar Pradesh.
               We provide reliable skilled, semi-skilled, and unskilled manpower to industries across India.
             </p>
@@ -76,7 +76,7 @@ const About = () => (
               <div className="w-12 h-12 rounded-xl bg-secondary/10 flex items-center justify-center mb-5">
                 <Target className="w-6 h-6 text-secondary" />
               </div>
-              <h3 className="text-xl font-heading font-semibold text-foreground mb-3">Our Mission</h3>
+              <h2 className="text-xl font-heading font-semibold text-foreground mb-3">Our Mission</h2>
               <p className="text-muted-foreground leading-relaxed">
                 To provide businesses with the highest quality integrated workforce solutions, ensuring reliable, vetted, and skilled workers are deployed swiftly to meet evolving industry demands across Uttar Pradesh and India.
               </p>
@@ -87,7 +87,7 @@ const About = () => (
               <div className="w-12 h-12 rounded-xl bg-secondary/10 flex items-center justify-center mb-5">
                 <Eye className="w-6 h-6 text-secondary" />
               </div>
-              <h3 className="text-xl font-heading font-semibold text-foreground mb-3">Our Vision</h3>
+              <h2 className="text-xl font-heading font-semibold text-foreground mb-3">Our Vision</h2>
               <p className="text-muted-foreground leading-relaxed">
                 To become the leading integrated manpower solutions partner in India, known for innovation, reliability, and creating meaningful employment opportunities for thousands of workers.
               </p>

@@ -71,7 +71,7 @@ const Contact = () => {
               <h1 className="mt-3 text-4xl sm:text-5xl font-heading font-bold text-primary-foreground leading-tight">
                 Let's Talk About Your Workforce Needs
               </h1>
-              <p className="mt-6 text-lg text-primary-foreground/70 leading-relaxed max-w-2xl">
+              <p className="mt-6 text-lg text-primary-foreground/80 leading-relaxed max-w-2xl">
                 Have a question or need a quote? Fill out the form below or reach out directly. We respond within 24 hours.
               </p>
             </div>
