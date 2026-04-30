@@ -51,10 +51,10 @@ const HeroSection = () => (
               <ArrowRight className="w-4 h-4" />
             </Link>
             <Link
-              to="/careers"
+              to="/services"
               className="inline-flex items-center gap-2 px-8 py-4 border-2 border-primary-foreground/30 text-primary-foreground rounded-lg font-bold hover:border-primary-foreground/60 transition-all backdrop-blur-sm hover:bg-white/5"
             >
-              Browse Opportunities
+              Explore Our Services
             </Link>
           </div>
           {/* Trust badges */}
