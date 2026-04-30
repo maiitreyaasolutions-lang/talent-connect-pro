@@ -29,10 +29,10 @@ const HeroSection = () => (
           transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
           className="lg:col-span-7"
         >
-          <span className="inline-flex items-center gap-2 px-4 py-1.5 bg-secondary/20 text-secondary rounded-full text-sm font-semibold mb-6 backdrop-blur-sm border border-secondary/10">
-            <Users className="w-4 h-4" />
-            Trusted Integrated Workforce Partner
-          </span>
+          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-secondary/20 border border-secondary/30 mb-6 animate-fade-in">
+            <Users className="w-4 h-4 text-secondary-foreground bg-secondary rounded-full p-0.5" />
+            <span className="text-xs font-bold text-secondary uppercase tracking-wider">Trusted Integrated Workforce Partner</span>
+          </div>
           <h1 className="text-4xl sm:text-5xl lg:text-7xl font-heading font-bold text-primary-foreground leading-[1.1] mb-6 drop-shadow-md">
             Powering Your{" "}
             <span className="text-secondary">Workforce</span>{" "}
@@ -76,7 +76,8 @@ const HeroSection = () => (
                 src={industrialWorkers}
                 alt="Industrial workers and manpower team provided by Maiitreyaa Integrated Solutions LLP"
                 className="w-full h-full object-cover grayscale-[10%] group-hover:grayscale-0 transition-all duration-700"
-                loading="lazy"
+                loading="eager"
+                fetchPriority="high"
                 width={380}
                 height={380}
               />

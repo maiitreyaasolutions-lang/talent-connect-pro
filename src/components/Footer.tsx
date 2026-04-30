@@ -30,7 +30,7 @@ const Footer = () => (
 
         {/* Quick Links */}
         <div>
-          <h4 className="font-heading font-semibold text-base mb-4">Quick Links</h4>
+          <h3 className="font-heading font-semibold text-base mb-4 text-foreground">Quick Links</h3>
           <ul className="space-y-2.5">
             {[
               { label: "Home", path: "/" },
@@ -39,7 +39,7 @@ const Footer = () => (
               { label: "Contact", path: "/contact" },
             ].map((l) => (
               <li key={l.path}>
-                <Link to={l.path} className="text-sm text-primary-foreground/80 hover:text-secondary transition-colors">
+                <Link to={l.path} className="text-sm text-primary-foreground hover:text-secondary transition-colors">
                   {l.label}
                 </Link>
               </li>
@@ -49,7 +49,7 @@ const Footer = () => (
 
         {/* Services */}
         <div>
-          <h4 className="font-heading font-semibold text-base mb-4">Services</h4>
+          <h3 className="font-heading font-semibold text-base mb-4 text-foreground">Services</h3>
           <ul className="space-y-2.5 text-sm text-primary-foreground/80">
             <li>Skilled Workers</li>
             <li>Semi-Skilled Workers</li>
@@ -61,7 +61,7 @@ const Footer = () => (
 
         {/* Contact Info */}
         <div>
-          <h4 className="font-heading font-semibold text-base mb-4">Contact</h4>
+          <h3 className="font-heading font-semibold text-base mb-4 text-foreground">Contact</h3>
           <ul className="space-y-3 text-sm text-primary-foreground/80">
             <li className="flex items-start gap-2">
               <MapPin className="w-5 h-5 mt-0.5 shrink-0 text-secondary" />

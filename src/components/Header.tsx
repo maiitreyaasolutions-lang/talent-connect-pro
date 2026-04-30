@@ -53,7 +53,7 @@ const Header = () => {
                   ? "text-secondary font-semibold"
                   : scrolled
                     ? "text-foreground hover:text-secondary"
-                    : "text-primary-foreground/80 hover:text-primary-foreground"
+                    : "text-primary-foreground/90 hover:text-primary-foreground"
               )}
             >
               {link.label}
