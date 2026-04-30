@@ -50,7 +50,9 @@ const Header = () => {
               className={cn(
                 "px-4 py-2 rounded-md text-sm font-medium transition-colors relative",
                 location.pathname === link.path
-                  ? "text-secondary font-semibold"
+                  ? scrolled
+                    ? "text-secondary font-semibold"
+                    : "text-primary-foreground font-semibold"
                   : scrolled
                     ? "text-foreground hover:text-secondary"
                     : "text-primary-foreground/90 hover:text-primary-foreground"
