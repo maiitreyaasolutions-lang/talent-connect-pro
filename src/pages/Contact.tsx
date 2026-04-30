@@ -165,7 +165,7 @@ const Contact = () => {
               <ScrollReveal delay={0.4}>
                 <div className="bg-muted rounded-xl overflow-hidden border border-border">
                   <iframe
-                    title="Maiitreyaa Office Location"
+                    title="Maiitreyaa Integrated Solutions LLP Office Location - A-2/99 Badri Awas Yojana, Allahabad, UP 211004"
                     src="https://maps.google.com/maps?q=25.497216,81.8566275&t=&z=15&ie=UTF8&iwloc=&output=embed"
                     className="w-full h-48"
                     style={{ border: 0 }}

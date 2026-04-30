@@ -11,7 +11,7 @@ const Footer = () => (
           <div className="flex items-center gap-2 md:gap-3 mb-4">
             <img
               src={logo}
-              alt="Maiitreyaa"
+              alt="Maiitreyaa Integrated Solutions LLP - Manpower Supply Company Logo"
               className="h-12 w-12 md:h-16 md:w-16 object-contain shrink-0"
               width={64}
               height={64}

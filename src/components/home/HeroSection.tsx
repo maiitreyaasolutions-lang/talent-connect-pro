@@ -10,10 +10,11 @@ const HeroSection = () => (
     <div className="absolute inset-0">
       <img
         src={heroBg}
-        alt="Manpower Services"
+        alt="Maiitreyaa Integrated Solutions LLP - Skilled Manpower Supply Services in Allahabad, Uttar Pradesh"
         className="w-full h-full object-cover object-right sm:object-center lg:object-right"
         width={1920}
         height={1080}
+        fetchPriority="high"
       />
       {/* Dynamic Overlay - Optimized for readability on mobile and visibility on desktop */}
       <div className="absolute inset-0 bg-gradient-to-b from-primary/95 via-primary/80 to-primary/40 lg:bg-gradient-to-r lg:from-primary/95 lg:via-primary/50 lg:to-transparent" />
@@ -73,8 +74,11 @@ const HeroSection = () => (
             <div className="w-full aspect-square max-w-[280px] sm:max-w-[340px] xl:max-w-[380px] rounded-[2.5rem] overflow-hidden shadow-2xl border-8 border-white/10 relative z-10 group bg-primary transition-transform duration-500 hover:scale-[1.02]">
               <img
                 src={industrialWorkers}
-                alt="Manpower Team"
+                alt="Industrial workers and manpower team provided by Maiitreyaa Integrated Solutions LLP"
                 className="w-full h-full object-cover grayscale-[10%] group-hover:grayscale-0 transition-all duration-700"
+                loading="lazy"
+                width={380}
+                height={380}
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-70" />
             </div>
