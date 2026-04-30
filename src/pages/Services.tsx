@@ -12,6 +12,7 @@ import {
   CheckCircle2
 } from "lucide-react";
 import ScrollReveal from "@/components/ScrollReveal";
+import SEOHead from "@/components/SEOHead";
 
 const serviceCategories = [
   {
@@ -84,6 +85,11 @@ const Services = () => {
 
   return (
     <>
+      <SEOHead
+        title="Services — Manpower Supply, Staffing & Facility Management"
+        description="Explore our comprehensive services: skilled workers (electricians, plumbers, welders, nurses), semi-skilled workers (drivers, security guards), unskilled labor, facility management, waste management, and government project staffing. Maiitreyaa Integrated Solutions LLP, Allahabad."
+        path="/services"
+      />
       {/* Hero */}
       <section className="pt-32 pb-20 bg-primary">
         <div className="container">

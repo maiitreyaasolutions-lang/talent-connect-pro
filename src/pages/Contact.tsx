@@ -4,6 +4,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { useState } from "react";
 import ScrollReveal from "@/components/ScrollReveal";
+import SEOHead from "@/components/SEOHead";
 import { useToast } from "@/hooks/use-toast";
 import { sendContactEmail } from "@/lib/frontend-mail";
 
@@ -56,6 +57,11 @@ const Contact = () => {
 
   return (
     <>
+      <SEOHead
+        title="Contact Us — Get a Free Manpower Quote"
+        description="Contact Maiitreyaa Integrated Solutions LLP for manpower supply requirements. Address: A-2/99 Badri Awas Yojana, Allahabad, UP 211004. Phone: +91 96963 18388. Email: maiitreyaasolutions@gmail.com. We respond within 24 hours."
+        path="/contact"
+      />
       {/* Hero */}
       <section className="pt-32 pb-20 bg-primary">
         <div className="container">

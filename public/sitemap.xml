@@ -1,26 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://maiitreyaaintegratedsolution.com/</loc>
-    <lastmod>2026-04-27</lastmod>
-    <changefreq>monthly</changefreq>
+    <xhtml:link rel="alternate" hreflang="en-in" href="https://maiitreyaaintegratedsolution.com/" />
+    <xhtml:link rel="alternate" hreflang="en-in" href="https://maiitreyaaintegratedsolution.in/" />
+    <xhtml:link rel="alternate" hreflang="en-in" href="https://maiitreyaaintegratedsolution.online/" />
+    <lastmod>2026-04-30</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
+    <loc>https://maiitreyaaintegratedsolution.com/services</loc>
+    <xhtml:link rel="alternate" hreflang="en-in" href="https://maiitreyaaintegratedsolution.com/services" />
+    <xhtml:link rel="alternate" hreflang="en-in" href="https://maiitreyaaintegratedsolution.in/services" />
+    <xhtml:link rel="alternate" hreflang="en-in" href="https://maiitreyaaintegratedsolution.online/services" />
+    <lastmod>2026-04-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
     <loc>https://maiitreyaaintegratedsolution.com/about</loc>
-    <lastmod>2026-04-27</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-in" href="https://maiitreyaaintegratedsolution.com/about" />
+    <xhtml:link rel="alternate" hreflang="en-in" href="https://maiitreyaaintegratedsolution.in/about" />
+    <xhtml:link rel="alternate" hreflang="en-in" href="https://maiitreyaaintegratedsolution.online/about" />
+    <lastmod>2026-04-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://maiitreyaaintegratedsolution.com/services</loc>
-    <lastmod>2026-04-27</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
     <loc>https://maiitreyaaintegratedsolution.com/contact</loc>
-    <lastmod>2026-04-27</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-in" href="https://maiitreyaaintegratedsolution.com/contact" />
+    <xhtml:link rel="alternate" hreflang="en-in" href="https://maiitreyaaintegratedsolution.in/contact" />
+    <xhtml:link rel="alternate" hreflang="en-in" href="https://maiitreyaaintegratedsolution.online/contact" />
+    <lastmod>2026-04-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>

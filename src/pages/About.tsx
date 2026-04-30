@@ -1,5 +1,6 @@
 import { Target, Eye, Users, Award, Building, Globe } from "lucide-react";
 import ScrollReveal from "@/components/ScrollReveal";
+import SEOHead from "@/components/SEOHead";
 
 import jaySingh from "@/assets/jay-singh.jpg";
 import vaibhawSingh from "@/assets/vaibhaw-singh.jpg";
@@ -43,6 +44,11 @@ const timeline = [
 
 const About = () => (
   <>
+    <SEOHead
+      title="About Us — Our Story, Mission & Leadership"
+      description="Learn about Maiitreyaa Integrated Solutions LLP (LLPIN: ACW-8159), a registered manpower supply company in Allahabad, UP. Meet our leadership team — Kunwar Jay Singh and Kunwar Vaibhaw Singh. Founded in March 2026 to provide reliable workforce solutions across India."
+      path="/about"
+    />
     {/* Hero */}
     <section className="pt-32 pb-20 bg-primary">
       <div className="container">
