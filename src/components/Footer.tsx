@@ -19,13 +19,13 @@ const Footer = () => (
             />
             <div className="flex flex-col justify-center pt-0.5">
               <span className="font-heading font-bold text-base md:text-lg block leading-none text-[#D4AF37]">Maiitreyaa</span>
-              <span className="text-[10px] font-medium tracking-wider uppercase text-[#D4AF37]/60 mt-1">Integrated Solutions LLP</span>
+              <span className="text-[10px] font-medium tracking-wider uppercase text-[#D4AF37]/90 mt-1">Integrated Solutions LLP</span>
             </div>
           </div>
           <p className="text-primary-foreground/80 text-sm leading-relaxed">
             Your trusted partner for reliable integrated manpower solutions. Providing skilled, semi-skilled, and unskilled workforce across industries in Uttar Pradesh and beyond.
           </p>
-          <p className="text-primary-foreground/60 text-xs mt-3">LLPIN: ACW-8159</p>
+          <p className="text-primary-foreground/80 text-xs mt-3">LLPIN: ACW-8159</p>
         </div>
 
         {/* Quick Links */}
@@ -87,7 +87,7 @@ const Footer = () => (
       </div>
 
       <div className="mt-12 pt-8 border-t border-primary-foreground/10 flex items-center justify-center sm:justify-between gap-4">
-        <div className="flex flex-col sm:flex-row items-center gap-3 sm:gap-4 text-sm text-primary-foreground/60 text-center sm:text-left">
+        <div className="flex flex-col sm:flex-row items-center gap-3 sm:gap-4 text-sm text-primary-foreground/80 text-center sm:text-left">
           <p>© {new Date().getFullYear()} Maiitreyaa Integrated Solutions LLP. All rights reserved.</p>
         </div>
       </div>
